@@ -1,0 +1,34 @@
+[user]
+    name = 
+    email = 
+[core]
+    editor = vim 
+    pager = less
+[color]
+    ui = true
+    diff = true
+    status = auto
+    branch = auto
+[alias]
+    dns = diff --name-status
+    stage = add
+    unstage = reset HEAD
+    trash = checkout HEAD
+    uncommit = reset HEAD^
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    topic-revs = rev-list --no-merges --first-parent --reverse ...master
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+[merge]
+    tool = meld
+[rerere]
+    enable = 1
+[help]
+    autocorrect = -1
+[gui]
+    spellingdictionary = none
