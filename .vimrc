@@ -1,3 +1,6 @@
+"Created by Danny S. Crasto
+
+
 " sets tab space to 4 chars of spaces
 set sts=4
 set ts=4
@@ -69,8 +72,8 @@ set wildmode=list:longest,full
 let g:alternateNoDefaultAlternate=1
 
 "highlight > 80 cols
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
 
 "taglist plugin
 filetype on
@@ -81,3 +84,6 @@ fixdel
 
 " map control-backspace to delete the previous word
 :imap <C-BS> <C-W>
+
+"xmledit plgin
+filetype plugin on
