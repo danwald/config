@@ -87,3 +87,12 @@ fixdel
 
 "xmledit plgin
 filetype plugin on
+
+"automatically source vimrc on write
+au! BufWritePost .vimrc source %
+
+"reload all and set filetypes
+function! ReRead()
+    bufdo e!
+    doautoall Filetype
+endfunction
