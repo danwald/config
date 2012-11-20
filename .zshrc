@@ -40,9 +40,6 @@ fack()
     ack -f -g $pat $dir 
 }
 
-export ROBJ_TCPPORT=5010
-
-
 
 # completion crap
 fpath=(~/.zsh/functions ~/.zsh/local-dist-funcs)
@@ -84,12 +81,8 @@ setopt HIST_IGNORE_ALL_DUPS # remove old duplicates when a new
 setopt HIST_REDUCE_BLANKS # remove extra white space from the history
 setopt list_types # list file types when completing
 
-export VMIP='10.199.11.22'
 #my paths
-export PATH=/users/dcrasto/bin:$PATH:
-
-#coverity
-export PATH=$PATH:/apps/coverity/sa/bin/:
+export PATH=$HOME/bin:$PATH:
 
 # function for setting terminal title
 title() 
@@ -114,8 +107,8 @@ get_git_dirty() {
 
 get_git_prompt() { 
    git branch &> /dev/null || return 1 
-#echo "[$(get_git_branch)$(get_git_dirty)]"
-   echo "[$(get_git_branch)]"
+   echo "[$(get_git_branch)$(get_git_dirty)]"
+   #echo "[$(get_git_branch)]"
 }
 
 . ~/.pprompt
