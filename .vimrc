@@ -58,8 +58,6 @@ set cindent
 "search backwards from pwd-root for tag files
 :set tags=./tags;
 
-:au!    BufRead,BufNewFile *.conf,*.bb,*.bbclass,*.inc,*.target  set filetype=lxkbb
-
 "spelling en and doxygen comments
 "set spelllang=en_us
 "set spell 
