@@ -41,9 +41,6 @@ fack()
 }
 
 
-# completion crap
-fpath=(~/.zsh/functions ~/.zsh/local-dist-funcs)
-
 autoload -U compinit
 compinit
 
