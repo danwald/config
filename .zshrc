@@ -17,27 +17,50 @@ alias go='git checkout '
 alias gk='gitk --all&'
 alias got='git '
 alias get='git '
+alias wgb='git branch 2> /dev/null | grep "*"'
 alias ls='ls --color=auto '
 alias lsd='find . -maxdepth 1 -type d'
 alias ds='dirs -vlp '
+alias grep='grep --color=auto'
+alias tree="ls -R | grep \":$\" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias ack='ack-grep'
+alias fack='ack-grep -l'
 
-fack() 
-{ 
-    dir=""
-    if [[ $# -lt  1 ]] ; then
-        echo "specify a pattern"
+alias pep8_check='git diff --unified=0 | pep8 --diff'
+
+alias vi='vim_wrapper'
+
+function ff(){
+    if [[ $# == 0 ]]; then
+        echo "usage: $0 [dir] filename|regex"
         return 1
-    fi
-
-
-    if [[ -z $2 ]] ; then
-        dir="."
     else
-        dir=$2
+        if [[ $# > 2 ]]; then
+            echo "Ignoring args greater than $2"
+        fi
+        if [[ $# > 1 ]]; then
+            find $1 -name "$2"
+        else
+            find . -name "$1"
+        fi
     fi
+}
+        
 
-    echo "seachin for file pattern \"$1\"  in \"$dir\" directory"; 
-    ack -f -g $pat $dir 
+waitfor()
+{
+    if [[ $# == 0 ]] ; then
+        echo usage: $0 pid
+        return 1
+    else
+        if [[ ! -e /proc/$1 ]]; then
+            echo pid $1 not found
+            return 1
+        fi
+    fi
+    while [[ -e /proc/$i ]]; do
+        sleep 1 
+    done
 }
 
 
@@ -79,7 +102,7 @@ setopt HIST_REDUCE_BLANKS # remove extra white space from the history
 setopt list_types # list file types when completing
 
 #my paths
-export PATH=$HOME/bin:$PATH:
+export PATH=/usr/bin:$HOME/bin:/usr/local/bin:/sbin/:$HOME/config/bin$PATH:
 
 # function for setting terminal title
 title() 

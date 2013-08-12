@@ -1,5 +1,5 @@
 defscrollback 10000
-chdir ~/code
+chdir ~/sandbox
 
 # terminfo and termcap for nice 256 color terminal
 # allow bold colors - necessary for some reason
