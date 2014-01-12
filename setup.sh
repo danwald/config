@@ -28,7 +28,7 @@ echo "Installing vim's xoria256 .. "
 curl -L --silent --output /tmp/stderr.out https://raw2.github.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim > .vim/colors/xoria256.vim
 
 echo "Changing your shell to zsh .."
-chsh -s `which zsh`
+chsh -s `which zsh` $USER
 
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 popd > /dev/null
