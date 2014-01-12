@@ -1,5 +1,3 @@
-## To use:
+To use:
 
-
-```bash
-wget https://github.com/danwald/config/archive/master.zip && unzip master.zip && cd config-master && sudo setup.sh```
+wget https://github.com/danwald/config/archive/master.zip && unzip master.zip && cd config-master && sudo setup.sh
