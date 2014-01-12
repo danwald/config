@@ -27,7 +27,7 @@ alias ack='ack-grep'
 alias fack='ack-grep -l'
 
 alias pep8_check='git diff --unified=0 | pep8 --diff'
-
+alias pd='popd'
 
 function ff(){
     if [[ $# == 0 ]]; then
