@@ -16,8 +16,7 @@ apt-get install -qy curl vim zsh byobu > /dev/null
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
 mkdir -p ~/.vim/plugins ~/.vim/colors
-ln -sfv $DIR/.vimrc .vim/.vimrc
-ln -sfv $DIR/.gitconfig .gitconfig
+ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.screenrc .screenrc
 
 echo "Installing zsh's pprompt .. "
