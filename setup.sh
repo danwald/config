@@ -6,7 +6,9 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 set -e 
-DIR=`dirname $0`
+DIR=`pwd -P $0`
+echo "$0 $DIR"
+exit 0
 
 echo "Updating packages .."
 apt-get update -qy > /dev/null
