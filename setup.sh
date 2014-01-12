@@ -20,6 +20,7 @@ pushd $HOME > /dev/null
 mkdir -p ~/.vim/plugins ~/.vim/colors
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.screenrc .screenrc
+chown -R $USER:$USER .vim .screenrc .vimrc
 
 echo "Installing zsh's pprompt .. "
 curl -L --silent --output /tmp/stderr.out http://aperiodic.net/phil/prompt/prompt.txt > .pprompt
