@@ -22,6 +22,7 @@ chown -R $USER:$USER .vim .screenrc .vimrc
 
 echo "Installing zsh's pprompt .. "
 curl -LSs http://aperiodic.net/phil/prompt/prompt.txt -o .pprompt
+chown -R $USER:$USER .pprompt
 
 echo "Installing vim's xoria256 .. "
 curl -LSs https://raw2.github.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim -o  .vim/colors/xoria256.vim
