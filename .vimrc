@@ -49,7 +49,7 @@ colorscheme xoria256
 "colorscheme desert
 "colorscheme pablo
 
-set statusline=%F%m%r%h%w\ [POS=%04l,%04v][%p%%][LEN=%L]\ \ [%{GitBranch()}]
+set statusline=%F%m%r%h%w\ [POS=%04l,%04v][%p%%][LEN=%L]\ \ %{fugitive#statusline()}
 set laststatus=2
 
 set cindent
