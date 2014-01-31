@@ -24,6 +24,7 @@ mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.screenrc .screenrc
 ln -sfv $DIR/.gitconfig .gitconfig
+ln -sfv $DIR/.zshrc .zshrc
 chown -R $USER:$USER .vim .screenrc .vimrc
 
 echo "Installing zsh's pprompt .. "
