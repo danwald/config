@@ -49,8 +49,9 @@ colorscheme xoria256
 "colorscheme desert
 "colorscheme pablo
 
-set statusline=%F%m%r%h%w\ [POS=%04l,%04v][%p%%][LEN=%L]\ \ %{fugitive#statusline()}
-set laststatus=2
+"using Source Code Pro
+set anti enc=utf-8
+set guifont=Source\ Code\ Pro\ 11
 
 set cindent
 
@@ -75,7 +76,7 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%91v.\+/
 
 "taglist plugin
-filetype on
+filetype plugin indent on
 
 "set t_kb=<BS>
 "fixdel
@@ -83,7 +84,7 @@ filetype on
 set number
 
 set foldmethod=indent
-set foldlevelstart=3
+set foldlevelstart=10
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
@@ -97,7 +98,7 @@ endfunction
 execute pathogen#infect()
 let g:flake8_ignore="E501,W293"
 let g:flake8_max_line_length=90
-
+autocmd FileType python map <buffer> <bar>:call Flake8()<CR>
 " onmi-complete
 filetype plugin on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -118,11 +119,39 @@ nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
 " jedi-vim
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#auto_close_doc = 0
+" let g:jedi#use_tabs_not_buffers = 0
+" let g:jedi#popup_on_dot = 0
+"let g:jedi#auto_close_doc = 0
 
 " gitgutter
 let g:gitgutter_eager = 0
 nmap gh <Plug>GitGutterNextHunk
 nmap gH <Plug>GitGutterPrevHunk
+
+" taglist
+let g:Tlist_File_Fold_Auto_Close=1
+let g:Tlist_Auto_Update=1
+let g:Tlist_Auto_Open=1
+let g:Tlist_WinWidth=36
+
+" Mappings to access buffers (don't use "\p" because a
+" delay before pressing "p" would accidentally paste).
+" \l       : list buffers
+" \b \f \g : go back/forward/last-used
+" \1 \2 \3 : go to buffer 1/2/3 etc
+nnoremap <Leader>l :ls<CR>
+nnoremap <Leader>b :bp<CR>
+nnoremap <Leader>f :bn<CR>
+nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>1 :1b<CR>
+nnoremap <Leader>2 :2b<CR>
+nnoremap <Leader>3 :3b<CR>
+nnoremap <Leader>4 :4b<CR>
+nnoremap <Leader>5 :5b<CR>
+nnoremap <Leader>6 :6b<CR>
+nnoremap <Leader>7 :7b<CR>
+nnoremap <Leader>8 :8b<CR>
+nnoremap <Leader>9 :9b<CR>
+nnoremap <Leader>0 :10b<CR>
+set statusline=%02n:%<%f\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{fugitive#statusline()}
+set laststatus=2
