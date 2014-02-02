@@ -38,7 +38,7 @@ echo "Changing your shell to zsh .."
 chsh -s `which zsh` $USER
 
 echo "Installing vim's pathogen plugin .."
-mkdir -p curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 echo "Installing vim's fugitive plugin .."
 pushd ~/.vim/bundle > /dev/null
