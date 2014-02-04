@@ -28,12 +28,6 @@ alias pd='popd'
 alias pgrep='pgrep -l'
 alias apt-get='apt-fast'
 
-alias memcached_flush='echo "flush_all" | nc localhost 11211'
-alias memc='/usr/bin/memcached -d -p 11211'
-alias email='python -m smtpd -n -c DebuggingServer localhost:1025'
-alias pep8_check='git diff --unified=0 master | pep8 --diff'
-alias clear_pyc='find . -name \*.pyc | xargs rm'
-
 function ff(){
     if [[ $# == 0 ]]; then
         echo "usage: $0 [dir] filename|regex"
@@ -50,7 +44,6 @@ function ff(){
     fi
 }
         
-
 waitfor()
 {
     if [[ $# == 0 ]] ; then
@@ -106,6 +99,9 @@ setopt HIST_REDUCE_BLANKS # remove extra white space from the history
 setopt list_types # list file types when completing
 
 #my paths
+export PATH=/usr/bin:$HOME/bin:/usr/local/bin:/sbin/:$PATH:
+export PATH=$HOME/sandbox/goals/pebble-dev/arm-cs-tools/bin:$PATH:
+>>>>>>> origin/dev
 export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 
 # function for setting terminal title
@@ -122,20 +118,20 @@ title()
 }
 
 get_git_branch() { 
-   git branch | awk '/^\*/ { print $2 }'
+   git branch 2> /dev/null | awk '/^\*/ { print $2 }' || return 1
 }
 
-get_git_dirty() { 
-   git diff --quiet || echo '*'
+get_git_dirty() {
+    git diff --quiet 2> /dev/null || echo "*"
 }
 
 get_git_prompt() { 
-   git branch &> /dev/null || return 1 
    echo "[$(get_git_branch)$(get_git_dirty)]"
-   #echo "[$(get_git_branch)]"
 }
 
 . ~/.pprompt
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
+[ -f ~/.pvt_zshrc ] || source ~/.pvt_zshrc
