@@ -101,7 +101,6 @@ setopt list_types # list file types when completing
 #my paths
 export PATH=/usr/bin:$HOME/bin:/usr/local/bin:/sbin/:$PATH:
 export PATH=$HOME/sandbox/goals/pebble-dev/arm-cs-tools/bin:$PATH:
->>>>>>> origin/dev
 export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
 
 # function for setting terminal title
