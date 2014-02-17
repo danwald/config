@@ -27,6 +27,7 @@ alias fack='ack-grep -l'
 alias pd='popd'
 alias pgrep='pgrep -l'
 alias apt-get='apt-fast'
+alias ssh='xterm=TERM ssh'
 
 function ff(){
     if [[ $# == 0 ]]; then
