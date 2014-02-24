@@ -144,7 +144,11 @@ get_git_branch() {
 }
 
 get_git_dirty() {
-    git diff --quiet 2> /dev/null || echo "*"
+    git diff --quiet 2> /dev/null
+    if [[ "$?" == "1" ]]; then
+        echo "*"
+    fi
+    return $?
 }
 
 get_git_prompt() { 
