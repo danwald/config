@@ -38,10 +38,14 @@ function ff(){
             echo "Ignoring args greater than $2"
         fi
         if [[ $# > 1 ]]; then
-            find $1 -name "$2"
+            dir="$1"
+            file="$2"
         else
-            find . -name "$1"
+            dir="."
+            file="$1"
         fi
+        find $dir -name "$file"
+
     fi
 }
 
