@@ -44,7 +44,25 @@ function ff(){
         fi
     fi
 }
-        
+
+function fnf(){
+    if [[ $# == 0 ]]; then
+        echo "usage: $0 [dir] filename|regex"
+        return 1
+    else
+        if [[ $# > 2 ]]; then
+            echo "Ignoring args greater than $2"
+        fi
+        if [[ $# > 1 ]]; then
+            dir="$1"
+            file="$2"
+        else
+            dir="."
+            file="$1"
+        fi
+        find $dir -type d | grep -v .git | read fd && ls "$fd/$file" > /dev/null 2>&1 || echo "$fd"
+    fi
+}       
 waitfor()
 {
     if [[ $# == 0 ]] ; then
