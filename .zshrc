@@ -160,5 +160,5 @@ get_git_prompt() {
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
-[ -f ~/.pvt_zshrc ] && source ~/.pvt_zshrc
+[ -f ~/.zshrc_pvt ] && source ~/.zshrc_pvt
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
