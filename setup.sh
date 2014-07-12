@@ -44,7 +44,7 @@ echo "Installing vim's fugitive plugin .."
 pushd ~/.vim/bundle > /dev/null
 git clone http://github.com/tpope/vim-fugitive
 popd > /dev/null
-chown -R $USER:$USER ~/home/$USER
+chown -R $USER:$USER /home/$USER
 
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 popd > /dev/null
