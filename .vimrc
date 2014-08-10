@@ -67,9 +67,11 @@ set guifont=Source\ Code\ Pro\ 11
 set cindent
 
 "search backwards from pwd-root for tag files
-:set tags=./tags;
+":set tags=./tags;
 
-set tags+=~/.vim/tags/py2.7.tags
+
+set tags+=~/.vim/tags/py2.7.tags;
+set tags+=~/.vim/tags/dubizzle.tags;
 
 "spelling en and doxygen comments
 "set spelllang=en_us
@@ -82,7 +84,7 @@ set wildmode=list:longest,full
 " uses a.vim plugin
 let g:alternateNoDefaultAlternate=1
 
-"highlight > 90 cols
+"highlight > 100 cols
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%91v.\+/
 
@@ -94,8 +96,8 @@ filetype plugin indent on
 
 set number
 
-set foldmethod=indent
-set foldlevelstart=10
+"set foldmethod=indent
+"set foldlevelstart=10
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
@@ -108,8 +110,8 @@ endfunction
 
 execute pathogen#infect()
 let g:flake8_ignore="E501,W293"
-let g:flake8_max_line_length=90
-autocmd FileType python map <buffer> <bar>:call Flake8()<CR>
+let g:flake8_max_line_length=100
+autocmd FileType python map <buffer> <leader><bar>:call Flake8()<CR>
 " onmi-complete
 filetype plugin on
 autocmd FileType python set omnifunc=pythoncomplete#Complete

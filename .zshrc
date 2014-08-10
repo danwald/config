@@ -83,6 +83,15 @@ waitfor()
     done
 }
 
+function kp()
+{
+    if [[ $# == 0 ]] ; then
+        echo usage: $0 process_name
+        return 1
+    else
+        ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 
+    fi
+}
 
 autoload -U compinit
 compinit
@@ -122,9 +131,7 @@ setopt HIST_REDUCE_BLANKS # remove extra white space from the history
 setopt list_types # list file types when completing
 
 #my paths
-export PATH=/usr/bin:$HOME/bin:/usr/local/bin:/sbin/:$PATH:
-export PATH=$HOME/sandbox/goals/pebble-dev/arm-cs-tools/bin:$PATH:
-export PIP_DOWNLOAD_CACHE="$HOME/.pip/cache"
+export PATH=/usr/bin:/usr/local/bin:/sbin/:$PATH:
 
 # function for setting terminal title
 title() 
@@ -160,5 +167,4 @@ get_git_prompt() {
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
-[ -f ~/.zshrc_pvt ] && source ~/.zshrc_pvt
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
