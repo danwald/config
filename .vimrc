@@ -69,9 +69,9 @@ set cindent
 "search backwards from pwd-root for tag files
 ":set tags=./tags;
 
-
 set tags+=~/.vim/tags/py2.7.tags;
 set tags+=~/.vim/tags/dubizzle.tags;
+set tags+=~/.vim/tags/cpp.tags
 
 "spelling en and doxygen comments
 "set spelllang=en_us
