@@ -12,6 +12,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Bundle 'wakatime/vim-wakatime'
 
+call vundle#end()            " required
+
 " sets tab space to 4 chars of spaces
 set sts=4
 set ts=4
@@ -67,7 +69,7 @@ set guifont=Source\ Code\ Pro\ 11
 set cindent
 
 "search backwards from pwd-root for tag files
-":set tags=./tags;
+:set tags=./tags;
 
 set tags+=~/.vim/tags/py2.7.tags;
 set tags+=~/.vim/tags/dubizzle.tags;
