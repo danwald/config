@@ -16,7 +16,7 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 echo "Updating packages .."
 apt-get update -qy > /dev/null
 echo "Installing packages .."
-apt-get install -qy curl vim zsh byobu git-core vim python-setuptools build-essential g++ ctags google-chrome-unstable  > /dev/null
+apt-get install -qy curl vim zsh byobu git-core vim python-setuptools build-essential g++ ctags google-chrome-unstable ack-grep > /dev/null
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
@@ -25,6 +25,7 @@ ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.screenrc .screenrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.zshrc .zshrc
+ln -sfv $DIR/.ackrc .ackrc
 chown -R $USER:$USER .vim .screenrc .vimrc
 
 echo "Installing zsh's pprompt .. "
