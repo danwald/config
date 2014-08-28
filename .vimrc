@@ -11,6 +11,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Bundle 'wakatime/vim-wakatime'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'tpope/vim-fugitive'
 
 call vundle#end()            " required
 
@@ -95,8 +97,6 @@ filetype plugin indent on
 
 "set t_kb=<BS>
 "fixdel
-
-set number
 
 "set foldmethod=indent
 "set foldlevelstart=10
