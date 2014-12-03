@@ -13,6 +13,7 @@ Plugin 'gmarik/Vundle.vim'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'mileszs/ack.vim'
 
 call vundle#end()            " required
 
