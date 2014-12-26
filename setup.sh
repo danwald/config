@@ -38,9 +38,6 @@ curl -LSs https://raw2.github.com/vim-scripts/xoria256.vim/master/colors/xoria25
 echo "Changing your shell to zsh .."
 chsh -s `which zsh` $USER
 
-echo "Installing vim's pathogen plugin .."
-curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-
 echo "Installing vim's fugitive plugin .."
 pushd ~/.vim/bundle > /dev/null
 git clone http://github.com/tpope/vim-fugitive

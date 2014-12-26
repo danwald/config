@@ -111,7 +111,6 @@ function! ReRead()
     doautoall Filetype
 endfunction
 
-execute pathogen#infect()
 let g:flake8_ignore="E501,W293"
 let g:flake8_max_line_length=100
 autocmd FileType python map <buffer> <leader><bar>:call Flake8()<CR>
