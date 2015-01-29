@@ -17,17 +17,16 @@ alias gk='gitk --all&'
 alias got='git '
 alias get='git '
 alias wgb='git branch 2> /dev/null | grep "*"'
-alias ls='ls --color=auto '
+alias ls='ls -G'
 alias lsd='find . -maxdepth 1 -type d'
 alias ds='dirs -vlp '
 alias grep='grep --color=auto'
 alias tree="ls -R | grep \":$\" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'"
-alias ack='ack-grep'
-alias fack='ack-grep -l'
+alias fack='ack -l'
 alias pd='popd'
 alias pgrep='pgrep -l'
 alias apt-get='apt-fast'
-alias ssh='xterm=TERM ssh'
+alias ssh='TERM=xterm ssh'
 
 function ff(){
     if [[ $# == 0 ]]; then
@@ -166,5 +165,6 @@ get_git_prompt() {
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
