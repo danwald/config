@@ -34,6 +34,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 " numbers plugin toggle
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
+let g:numbers_exclude = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'taglist', 'minibufexpl', 'nerdtree']
 " gitgutter
 let g:gitgutter_eager = 0
 nmap gh <Plug>GitGutterNextHunk
