@@ -14,8 +14,36 @@ Bundle 'wakatime/vim-wakatime'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/AutoTag.git'
+Bundle 'nvie/vim-flake8'
+Bundle 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
+
+" Plugin options 
+" flake
+let g:flake8_ignore="E501,W293"
+let g:flake8_max_line_length=100
+" onmi-complete
+filetype plugin on
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" numbers plugin toggle
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+" gitgutter
+let g:gitgutter_eager = 0
+nmap gh <Plug>GitGutterNextHunk
+nmap gH <Plug>GitGutterPrevHunk
+" taglist
+let g:Tlist_File_Fold_Auto_Close=1
+let g:Tlist_Auto_Update=1
+let g:Tlist_Auto_Open=1
+let g:Tlist_WinWidth=36
+
+set completeopt+=menuone,longest,preview
 
 " sets tab space to 4 chars of spaces
 set sts=4
@@ -111,43 +139,11 @@ function! ReRead()
     doautoall Filetype
 endfunction
 
-let g:flake8_ignore="E501,W293"
-let g:flake8_max_line_length=100
-autocmd FileType python map <buffer> <leader><bar>:call Flake8()<CR>
-" onmi-complete
-filetype plugin on
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-set completeopt+=menuone,longest,preview
-
 " leader remap
 let mapleader=","
 
 " sudo file save
 noremap <Leader>W :w !sudo tee % > /dev/null
-
-" numbers plugin toggle
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
-
-" jedi-vim
-" let g:jedi#use_tabs_not_buffers = 0
-" let g:jedi#popup_on_dot = 0
-"let g:jedi#auto_close_doc = 0
-
-" gitgutter
-let g:gitgutter_eager = 0
-nmap gh <Plug>GitGutterNextHunk
-nmap gH <Plug>GitGutterPrevHunk
-
-" taglist
-let g:Tlist_File_Fold_Auto_Close=1
-let g:Tlist_Auto_Update=1
-let g:Tlist_Auto_Open=1
-let g:Tlist_WinWidth=36
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
