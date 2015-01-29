@@ -17,6 +17,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/AutoTag.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'myusuf3/numbers.vim'
 
 call vundle#end()            " required
 
