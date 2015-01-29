@@ -23,8 +23,19 @@ call vundle#end()            " required
 
 " Plugin options 
 " flake
-let g:flake8_ignore="E501,W293"
-let g:flake8_max_line_length=100
+let g:flake8_show_in_file=1
+let g:flake8_error_marker='EE'
+let g:flake8_warning_marker='WW'
+let g:flake8_pyflake_marker=''
+let g:flake8_complexity_marker=''
+let g:flake8_naming_marker=''
+" to use colors defined in the colorscheme
+highlight link Flake8_Error      Error
+highlight link Flake8_Warning    WarningMsg
+highlight link Flake8_Complexity WarningMsg
+highlight link Flake8_Naming     WarningMsg
+highlight link Flake8_PyFlake    WarningMsg
+autocmd FileType python map <buffer> <Leader>F :call Flake8()<CR>
 " onmi-complete
 filetype plugin on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
