@@ -13,8 +13,10 @@ ln -sfv $DIR/.zshrc .zshrc
 ln -sfv $DIR/.ackrc .ackrc
 ln -sfv $DIR/flake8 ~/.config/flake8
 
-echo "Installing zsh's pprompt .. "
-curl -LSs http://aperiodic.net/phil/prompt/prompt.txt -o .pprompt
+echo "Installing oh-my-zsh .. "
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+mkdir ~/.oh-my-zsh/plugins/danwald/
+ln -sfv $DIR/danwald.plugin.zsh ~/.oh-my-zsh/plugins/danwald/danwald.plugin.zsh
 
 echo "Installing vim's xoria256 .. "
 curl -LSs https://raw2.github.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim -o  .vim/colors/xoria256.vim
