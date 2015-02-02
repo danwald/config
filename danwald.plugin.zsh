@@ -94,11 +94,3 @@ get_git_dirty() {
 get_git_prompt() { 
    echo "[$(get_git_branch)$(get_git_dirty)]"
 }
-
-. ~/.pprompt
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
