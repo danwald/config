@@ -1,170 +1,80 @@
-# .zshrc
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
-# Source global definitions
-if [ -f /etc/zshrc ]; then
-	. /etc/zshrc
-fi
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="bira"
 
-# User specific aliases and functions
-alias make='make -j5'
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias go='git checkout '
-alias gk='gitk --all&'
-alias got='git '
-alias get='git '
-alias wgb='git branch 2> /dev/null | grep "*"'
-alias ls='ls -G'
-alias lsd='find . -maxdepth 1 -type d'
-alias ds='dirs -vlp '
-alias grep='grep --color=auto'
-alias tree="ls -R | grep \":$\" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'"
-alias fack='ack -l'
-alias pd='popd'
-alias pgrep='pgrep -l'
-alias apt-get='apt-fast'
-alias ssh='TERM=xterm ssh'
+# Uncomment the following line to use case-sensitive completion.
+ CASE_SENSITIVE="true"
 
-function ff(){
-    if [[ $# == 0 ]]; then
-        echo "usage: $0 [dir] filename|regex"
-        return 1
-    else
-        if [[ $# > 2 ]]; then
-            echo "Ignoring args greater than $2"
-        fi
-        if [[ $# > 1 ]]; then
-            dir="$1"
-            file="$2"
-        else
-            dir="."
-            file="$1"
-        fi
-        find $dir -name "$file"
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
 
-    fi
-}
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
-function fnf(){
-    if [[ $# == 0 ]]; then
-        echo "usage: $0 [dir] filename|regex"
-        return 1
-    else
-        if [[ $# > 2 ]]; then
-            echo "Ignoring args greater than $2"
-        fi
-        if [[ $# > 1 ]]; then
-            dir="$1"
-            file="$2"
-        else
-            dir="."
-            file="$1"
-        fi
-        find $dir -type d | grep -v .git | read fd && ls "$fd/$file" > /dev/null 2>&1 || echo "$fd"
-    fi
-}       
-waitfor()
-{
-    if [[ $# == 0 ]] ; then
-        echo usage: $0 pid
-        return 1
-    else
-        if [[ ! -e /proc/$1 ]]; then
-            echo pid $1 not found
-            return 1
-        fi
-    fi
-    while [[ -e /proc/$i ]]; do
-        sleep 1 
-    done
-}
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
 
-function kp()
-{
-    if [[ $# == 0 ]] ; then
-        echo usage: $0 process_name
-        return 1
-    else
-        ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 
-    fi
-}
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-autoload -U compinit
-compinit
+# Uncomment the following line to enable command auto-correction.
+ ENABLE_CORRECTION="true"
 
-ZLS_COLORS=$LS_COLORS
-zmodload zsh/complist
+# Uncomment the following line to display red dots whilst waiting for completion.
+ COMPLETION_WAITING_DOTS="true"
 
-#emacs keybinds not EDITORS
-bindkey -e
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-#correct backspace bind
-bindkey "^?" backward-delete-char
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
 
-#------------------------------------------------------------------
-# A few key bindings
-#------------------------------------------------------------------
-bindkey '^[[1~' beginning-of-line   # home
-bindkey '^[[4~' end-of-line         # end
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
-#------------------------------------------------------------------
-# I like my history to go way back
-#------------------------------------------------------------------
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=$HOME/.zhistory
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git brew wd danwald)
 
-# report time on long commands
-REPORTTIME=2
+# User configuration
 
-#------------------------------------------------------------------
-# setup a few options
-#------------------------------------------------------------------
-setopt AUTO_PUSHD   # make cd act like pushd
-setopt HIST_IGNORE_ALL_DUPS # remove old duplicates when a new 
-                            # command is stored in the history
-setopt HIST_REDUCE_BLANKS # remove extra white space from the history
-setopt list_types # list file types when completing
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-#my paths
-export PATH=/usr/bin:/usr/local/bin:/sbin/:$PATH:
+source $ZSH/oh-my-zsh.sh
 
-# function for setting terminal title
-title() 
-{
-   if [[ $TERM == "screen" ]]; then
-     # Use these two for GNU Screen:
-     print -nR $'\033k'$1$'\033'\\\ > /dev/null
-     print -nR $'\033]0;'$2$'\a' > /dev/null
-   elif [[ $TERM == "xterm" || $TERM == "rxvt" || $TERM == "rxvt-unicode" ]]; then
-     # Use this one instead for XTerms:
-     print -nR $'\033]0;'$*$'\a' > /dev/null
-   fi
-}
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-get_git_branch() { 
-   git branch 2> /dev/null | awk '/^\*/ { print $2 }' || return 1
-}
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
 
-get_git_dirty() {
-    git diff --quiet 2> /dev/null
-    if [[ "$?" == "1" ]]; then
-        echo "*"
-    fi
-    return $?
-}
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
 
-get_git_prompt() { 
-   echo "[$(get_git_branch)$(get_git_dirty)]"
-}
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-. ~/.pprompt
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
