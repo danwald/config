@@ -1,4 +1,4 @@
 #!/bin/sh
 
 BRANCH=`git branch 2> /dev/null | awk '/^\*/ { print $2 }'`
-sed -i -e "1s/^/$BRANCH: /" $1
+sed -i -e "1s/^/`git branch 2> /dev/null | awk '/^\*/ { print $2 }'`: /" $1
