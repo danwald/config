@@ -19,6 +19,7 @@ Bundle 'nvie/vim-flake8'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'ervandew/supertab'
+Bundle 'fatih/vim-go'
 
 call vundle#end()            " required
 
