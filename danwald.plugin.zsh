@@ -37,14 +37,14 @@ function fnf(){
     fi
 }
 
-waitfor()
+function waitfor()
 {
     if [[ $# == 0 ]] ; then
-        echo usage: $0 pid
+        echo "usage: $0 pid"
         return 1
     else
         if [[ ! -e /proc/$1 ]]; then
-            echo pid $1 not found
+            echo "pid $1 not found"
             return 1
         fi
     fi
@@ -53,10 +53,21 @@ waitfor()
     done
 }
 
+function rp()
+{
+    if [[ $# == 0 ]] ; then
+        "echo usage: $0 process_name"
+        return 1
+    else
+        ps aux | grep $1 | grep -v grep
+    fi
+}
+
+
 function kp()
 {
     if [[ $# == 0 ]] ; then
-        echo usage: $0 process_name
+        "echo usage: $0 process_name"
         return 1
     else
         ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 
