@@ -56,7 +56,7 @@ function waitfor()
 function rp()
 {
     if [[ $# == 0 ]] ; then
-        "echo usage: $0 process_name"
+        echo "usage: $0 process_name"
         return 1
     else
         ps aux | grep $1 | grep -v grep
@@ -67,10 +67,14 @@ function rp()
 function kp()
 {
     if [[ $# == 0 ]] ; then
-        "echo usage: $0 process_name"
+        echo "usage: $0 process_name"
         return 1
     else
-        ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill -9 
+        SIG='-KILL'
+        if [[ $# -gt 1 ]] ; then
+            SIG=$2
+        fi
+        ps aux | grep $1 | grep -v grep | awk '{print $2}' | xargs kill $SIG
     fi
 }
 
