@@ -70,7 +70,7 @@ function kp()
         echo "usage: $0 process_name"
         return 1
     else
-        SIG='-KILL'
+        SIG='-INT'
         if [[ $# -gt 1 ]] ; then
             SIG=$2
         fi
