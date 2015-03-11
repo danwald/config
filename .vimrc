@@ -50,12 +50,14 @@ nnoremap <F4> :NumbersOnOff<CR>
 let g:numbers_exclude = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'taglist', 'minibufexpl', 'nerdtree']
 " gitgutter
 let g:gitgutter_eager = 0
+let g:gitgutter_realtime = 0
 nmap gh <Plug>GitGutterNextHunk
 nmap gH <Plug>GitGutterPrevHunk
+
 " taglist
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
-let g:Tlist_Auto_Open=1
+let g:Tlist_Auto_Open=0
 let g:Tlist_WinWidth=36
 
 set completeopt+=menuone,longest,preview
@@ -179,5 +181,5 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
-set statusline=%02n:%<%f\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{fugitive#statusline()}
+set statusline=%02n:%<%f\ %=[POS=%04l,%04v][%p%%][LEN=%L]
 set laststatus=2
