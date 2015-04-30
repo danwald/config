@@ -20,6 +20,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
+Bundle 'gregsexton/gitv'
 
 call vundle#end()            " required
 
@@ -51,6 +52,7 @@ let g:numbers_exclude = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3
 " gitgutter
 let g:gitgutter_eager = 0
 let g:gitgutter_realtime = 0
+let g:gitgutter_sign_column_always = 1
 nmap gh <Plug>GitGutterNextHunk
 nmap gH <Plug>GitGutterPrevHunk
 
@@ -58,7 +60,7 @@ nmap gH <Plug>GitGutterPrevHunk
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
-let g:Tlist_WinWidth=36
+let g:Tlist_WinWidth=50
 
 set completeopt+=menuone,longest,preview
 
@@ -72,15 +74,6 @@ set et
 set smartindent
 set autoindent
 
-"sets expandtab
-
-" sets bs equal to indent
-" set bs=indent
-
-" sets ruler on
-"set ruler
-
-" switches on syntax hightlighting
 syntax on
 
 " shows matching brackets
@@ -89,7 +82,6 @@ set showmatch
 " highlighs last seach item
 set hls
 set incsearch
-
 
 " multofile editiing . splits horizontal/vertical map mappings
 set wmw=0
@@ -181,5 +173,7 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
+nnoremap <Leader>t :tabp<CR>
+
 set statusline=%02n:%<%f\ %=[POS=%04l,%04v][%p%%][LEN=%L]
 set laststatus=2
