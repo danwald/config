@@ -10,5 +10,8 @@ source $ZSH/oh-my-zsh.sh
 alias cd='pushd > /dev/null'
 alias pd='popd > /dev/null'
 alias ds='dirs -pv'
+alias git_mod="git status | grep modified | awk '{print \$2}'"
 
 [ -f ~/.zshrc_local ] && . ~/.zshrc_local
+
+unsetopt share_history
