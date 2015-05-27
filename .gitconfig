@@ -29,6 +29,7 @@
     tool = meld
 [rerere]
     enable = 1
+	autoupdate = 1
 [help]
     autocorrect = -1
 [gui]
