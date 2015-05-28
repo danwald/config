@@ -1,6 +1,6 @@
 #!/bin/sh
 
 [ -f .git/SQUASH_MSG ] && exit 0
-
 BRANCH=`git branch 2> /dev/null | awk '/^\*/ { print $2 }'`
+test "grep ^ *$BRANCH: $1" || exit 0
 eval "sed -i -e '1s/^/$BRANCH: /' $1"
