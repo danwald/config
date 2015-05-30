@@ -25,6 +25,7 @@
     dump = cat-file -p
     ls = ls-files
     lsu = ls-files -v | grep -e '^[a-z]'
+    force-tag = "!f() { git tag -fam '${1}' ${1}; };f "
 [merge]
     tool = meld
 [rerere]
