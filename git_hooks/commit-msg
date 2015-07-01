@@ -1,5 +1,9 @@
 #!/bin/sh
 
-BRANCH=`git branch 2> /dev/null | awk '/^\*/ { print $2 }'`
-test "grep ^ *$BRANCH: $1" || exit 0
-eval "sed -i -e '1s/^/$BRANCH: /' $1"
+firstline=$(head -n1 $1)
+if [ -z "$firstline" ] ;then #empty line means new commit message via http://stackoverflow.com/users/1465640/pylinux
+        BRANCH=`git branch 2> /dev/null | awk '/^\*/ { print $2 }'`
+        test "grep ^ *$BRANCH: $1" || exit 0
+        eval "sed -i -e '1s/^/$BRANCH: /' $1"
+        echo $BRANCH 
+fi
