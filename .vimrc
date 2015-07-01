@@ -60,7 +60,7 @@ nmap gH <Plug>GitGutterPrevHunk
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
-let g:Tlist_WinWidth=50
+let g:Tlist_WinWidth=30
 
 set completeopt+=menuone,longest,preview
 
@@ -127,8 +127,8 @@ set wildmode=list:longest,full
 let g:alternateNoDefaultAlternate=1
 
 "highlight > 100 cols
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%91v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"atch OverLength /\%91v.\+/
 
 "taglist plugin
 filetype plugin indent on
@@ -175,5 +175,5 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <Leader>t :tabp<CR>
 
-set statusline=%02n:%<%f\ %=[POS=%04l,%04v][%p%%][LEN=%L]
+set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
 set laststatus=2
