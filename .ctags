@@ -1,7 +1,3 @@
 --tag-relative=no
---exclude=media
---exclude="taxonomy_helpers_include*.py" 
---exclude=tests
---exclude=.js
---exclude=.git
 --python-kinds=-i
+--exclude=@/Users/danny/.ctagsignore
