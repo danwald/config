@@ -12,6 +12,7 @@ ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.zshrc .zshrc
 ln -sfv $DIR/.ackrc .ackrc
 ln -sfv $DIR/flake8 ~/.config/flake8
+ln -sfv $DIR/.ctags .ctags
 
 echo "Installing oh-my-zsh .. "
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
