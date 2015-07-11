@@ -18,6 +18,16 @@ alias gdanwald="git config --local user.email danwald79@gmail.com"
 unsetopt share_history
 
 function dbash(){
-    docker exec -it $1 bash
+    if test -z "$1"
+    then
+        container=`docker ps -lq`
+        echo "Using last active container $container"
+    else
+        container=$1
+    fi
+    docker exec -it $container bash
 }
+
 alias clean_docker="docker rm (docker ps -a | grep Exited | awk '{print \$1 }') && docker rmi (docker images -aq)"
+alias dps='docker ps'
+alias dim='docker images'
