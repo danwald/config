@@ -29,6 +29,20 @@ function dbash(){
     docker exec -it $container bash
 }
 
-alias clean_docker="docker rm (docker ps -a | grep Exited | awk '{print \$1 }') && docker rmi (docker images -aq)"
-alias dps='docker ps'
-alias dim='docker images'
+alias dk-ps='docker ps'
+alias dk-im='docker images'
+
+#https://www.calazan.com/docker-cleanup-commands/
+#Kill all running containers.
+alias dk-kall='docker kill $(docker ps -q)'
+
+#Delete all stopped containers.
+alias dk-cc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+
+#Delete all untagged images.
+alias dc-i='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+
+# Delete all stopped containers and untagged images.
+alias dk-c='dockercleanc || true && dockercleani'
+
+export EDITOR=vim
