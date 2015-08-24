@@ -18,7 +18,7 @@ alias gdanwald="git config --local user.email danwald79@gmail.com"
 
 unsetopt share_history
 
-function dbash(){
+function dk-bash(){
     if test -z "$1"
     then
         container=`docker ps -q | head -1`
