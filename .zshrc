@@ -21,7 +21,7 @@ unsetopt share_history
 function dbash(){
     if test -z "$1"
     then
-        container=`docker ps -lq`
+        container=`docker ps -q | head -1`
         echo "Using last active container $container"
     else
         container=$1
