@@ -3,7 +3,7 @@ ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-plugins=(git brew wd docker danwald)
+plugins=(git brew docker aws python redis-cli danwald)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -40,9 +40,9 @@ alias dk-kall='docker kill $(docker ps -q)'
 alias dk-cc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
 
 #Delete all untagged images.
-alias dc-i='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+alias dk-ci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
 
 # Delete all stopped containers and untagged images.
-alias dk-c='dockercleanc || true && dockercleani'
+alias dk-c='dk-cc || true && dk-ci'
 
 export EDITOR=vim
