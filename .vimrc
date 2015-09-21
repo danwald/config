@@ -21,6 +21,7 @@ Bundle 'myusuf3/numbers.vim'
 Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
 Bundle 'gregsexton/gitv'
+Bundle 'scrooloose/nerdtree'
 
 call vundle#end()            " required
 
@@ -60,7 +61,11 @@ nmap gH <Plug>GitGutterPrevHunk
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
-let g:Tlist_WinWidth=30
+let g:Tlist_WinWidth=45
+
+" nerdtree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 set completeopt+=menuone,longest,preview
 
@@ -138,6 +143,7 @@ filetype plugin indent on
 
 "set foldmethod=indent
 "set foldlevelstart=10
+set nofoldenable
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
