@@ -3,6 +3,7 @@
 --pager=less -R
 
 --ignore-dir=cover
+--ignore-dir=media
 --ignore-dir=docs
 --ignore-file=is:tags
 --ignore-file=is:.coverage
