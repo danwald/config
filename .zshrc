@@ -42,7 +42,4 @@ alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker 
 #Delete all untagged images.
 alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qaf)'
 
-# Delete all stopped containers and untagged images.
-alias dc='dcc || true && dci'
-
 export EDITOR=vim
