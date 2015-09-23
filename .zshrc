@@ -18,7 +18,7 @@ alias gdanwald="git config --local user.email danwald79@gmail.com"
 
 unsetopt share_history
 
-function dk-bash(){
+function dbash(){
     if test -z "$1"
     then
         container=`docker ps -q | head -1`
@@ -29,20 +29,20 @@ function dk-bash(){
     docker exec -it $container bash
 }
 
-alias dk-ps='docker ps'
-alias dk-im='docker images'
+alias dps='docker ps'
+alias dim='docker images'
 
 #https://www.calazan.com/docker-cleanup-commands/
 #Kill all running containers.
-alias dk-kall='docker kill $(docker ps -q)'
+alias dkall='docker kill $(docker ps -q)'
 
 #Delete all stopped containers.
-alias dk-cc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
 
 #Delete all untagged images.
-alias dk-ci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -q -f dangling=true)'
+alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qaf)'
 
 # Delete all stopped containers and untagged images.
-alias dk-c='dk-cc || true && dk-ci'
+alias dc='dcc || true && dci'
 
 export EDITOR=vim
