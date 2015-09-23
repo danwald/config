@@ -29,6 +29,17 @@ function dbash(){
     docker exec -it $container bash
 }
 
+function drun(){
+    if test -z "$1"
+    then
+        container=`docker images -q | head -1`
+        echo "Using last image container $container"
+    else
+        container=$1
+    fi
+    docker run -d $container
+}
+
 alias dps='docker ps'
 alias dim='docker images'
 
