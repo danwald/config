@@ -54,3 +54,7 @@ alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker 
 alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qaf)'
 
 export EDITOR=vim
+
+function dtags(){
+    curl -s -S "https://registry.hub.docker.com/v2/repositories/$@/tags/" | jq '."results"[]["name"]' |sort
+}
