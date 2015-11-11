@@ -63,6 +63,10 @@ function rp()
     fi
 }
 
+function rpi()
+{
+    [[ $# != 0 ]] && rp $1 | awk '{print $2}'
+}
 
 function kp()
 {
