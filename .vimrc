@@ -22,6 +22,7 @@ Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
 Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
+Plugin 'tmhedberg/SimpylFold'
 
 call vundle#end()            " required
 
@@ -56,16 +57,17 @@ let g:gitgutter_realtime = 0
 let g:gitgutter_sign_column_always = 1
 nmap gh <Plug>GitGutterNextHunk
 nmap gH <Plug>GitGutterPrevHunk
-
 " taglist
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
 let g:Tlist_WinWidth=45
-
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" simplefold
+let g:SimpylFold_docstring_preview=1
+
 
 set completeopt+=menuone,longest,preview
 
@@ -133,7 +135,11 @@ let g:alternateNoDefaultAlternate=1
 
 "highlight > 100 cols
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"atch OverLength /\%91v.\+/
+"match OverLength /\%91v.\+/
+
+"flag unnecessary whitespace
+highlight BadWhitespace ctermbg=red ctermfg=white guibg=#592929
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "taglist plugin
 filetype plugin indent on
@@ -181,9 +187,14 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <Leader>t :tabp<CR>
 
-
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+
+"toggle spelling 
+nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
+
+" Enable folding with the spacebar
+nnoremap <space> za
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
 set laststatus=2
