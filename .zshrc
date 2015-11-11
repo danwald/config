@@ -3,7 +3,8 @@ ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-plugins=(git brew docker aws python redis-cli danwald)
+#pplugins=(git brew docker aws python redis-cli danwald)
+plugins=(git danwald)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
