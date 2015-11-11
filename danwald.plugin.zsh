@@ -59,13 +59,16 @@ function rp()
         echo "usage: $0 process_name"
         return 1
     else
-        ps aux | grep $1 | grep -v grep
+        for i in $@ 
+        do
+            ps aux | grep $i | grep -v grep
+        done
     fi
 }
 
 function rpi()
 {
-    [[ $# != 0 ]] && rp $1 | awk '{print $2}'
+    [[ $# != 0 ]] && rp $@ | awk '{print $2}'
 }
 
 function kp()
