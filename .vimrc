@@ -26,9 +26,8 @@ Plugin 'tmhedberg/SimpylFold'
 
 call vundle#end()            " required
 
-" Plugin options 
+" Plugin options
 " flake
-let g:flake8_show_in_file=1
 let g:flake8_error_marker='EE'
 let g:flake8_warning_marker='WW'
 let g:flake8_pyflake_marker=''
@@ -65,6 +64,7 @@ let g:Tlist_WinWidth=45
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeIgnore = ['\.pyc$']
 " simplefold
 let g:SimpylFold_docstring_preview=1
 
@@ -124,7 +124,7 @@ set tags+=~/.vim/tags/cpp.tags
 
 "spelling en and doxygen comments
 "set spelllang=en_us
-"set spell 
+"set spell
 
 set wildmode=list:longest,full
 
@@ -166,6 +166,10 @@ let mapleader=","
 " sudo file save
 noremap <Leader>W :w !sudo tee % > /dev/null
 
+" clear trailing whitespace
+autocmd BufWritePre <buffer> :%s/\s\+$//e
+noremap <Leader>w :%s/\s\+$//e
+
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
 " \l       : list buffers
@@ -190,7 +194,7 @@ nnoremap <Leader>t :tabp<CR>
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
-"toggle spelling 
+"toggle spelling
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
 " Enable folding with the spacebar
