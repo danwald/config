@@ -4,7 +4,7 @@ CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 #pplugins=(git brew docker aws python redis-cli danwald)
-plugins=(git danwald)
+plugins=(git danwald awsshutils)
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -49,13 +49,16 @@ alias dim='docker images'
 alias dkall='docker kill $(docker ps -q)'
 
 #Delete all stopped containers.
-alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -a -q)'
+alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -aq)'
 
 #Delete all untagged images.
-alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qaf)'
+alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qa)'
 
-export EDITOR=vim
 
 function dtags(){
     curl -s -S "https://registry.hub.docker.com/v2/repositories/$@/tags/" | jq '."results"[]["name"]' |sort
 }
+
+
+export EDITOR=vim
+export ENV_DIR=$HOME/envs
