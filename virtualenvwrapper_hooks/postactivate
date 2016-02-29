@@ -1,0 +1,5 @@
+# This hook is sourced after this virtualenv is activated.
+#
+
+ENV_FILE="${ENV_DIR}/$(basename $VIRTUAL_ENV)"
+[[ -e "$ENV_FILE" ]] && source $ENV_FILE && export ENV_FILE="$ENV_FILE"
