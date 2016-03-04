@@ -1,0 +1,1 @@
+[[ -e .git ]] && [[ ! -e .pre-commit-config.yaml ]] && ln -s $DANWALD_GIT_PRE_COMMIT .

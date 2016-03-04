@@ -1,0 +1,10 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: master
+    hooks:
+    -   id: trailing-whitespace
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: debug-statements
+    -   id: detect-aws-credentials
+    -   id: detect-private-key
+    -   id: end-of-file-fixer
