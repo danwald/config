@@ -2,4 +2,4 @@
 #
 
 ENV_FILE="${ENV_DIR}/$(basename $VIRTUAL_ENV)"
-[[ -e "$ENV_FILE" ]] && source $ENV_FILE && export ENV_FILE="$ENV_FILE"
+[[ -e "$ENV_FILE" ]] && source $ENV_FILE && export ENV_FILE="$ENV_FILE" || unset ENV_FILE
