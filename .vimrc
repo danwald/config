@@ -23,6 +23,8 @@ Bundle 'fatih/vim-go'
 Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'kien/ctrlp.vim.git'
+
 
 call vundle#end()            " required
 
@@ -67,8 +69,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeIgnore = ['\.pyc$']
 " simplefold
 let g:SimpylFold_docstring_preview=1
-
-
+" ctrlp
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 set completeopt+=menuone,longest,preview
 
 " sets tab space to 4 chars of spaces
