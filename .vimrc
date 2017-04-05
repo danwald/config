@@ -1,6 +1,6 @@
 "Created by Danny S. Crasto
 set nocompatible              " be iMproved, required
-filetype off                  " required
+"filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -17,13 +17,14 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/AutoTag.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'myusuf3/numbers.vim'
 Bundle 'ervandew/supertab'
 Bundle 'fatih/vim-go'
 Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim.git'
+Plugin 'vim-scripts/cscope.vim.git'
+Plugin 'fisadev/vim-isort'
 
 
 call vundle#end()            " required
@@ -72,6 +73,25 @@ let g:SimpylFold_docstring_preview=1
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 set completeopt+=menuone,longest,preview
+" csscope
+nnoremap <Leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
+nnoremap <Leader>l :call ToggleLocationList()<CR>
+" s: Find this C symbol
+nnoremap  <Leader>fs :call cscope#find('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <Leader>fg :call cscope#find('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <Leader>fd :call cscope#find('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <Leader>fc :call cscope#find('c', expand('<cword>'))<CR>
+" t: Find tkis text string
+nnoremap  <Leader>ft :call cscope#find('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <Leader>fe :call cscope#find('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <Leader>ff :call cscope#find('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <Leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 
 " sets tab space to 4 chars of spaces
 set sts=4
@@ -162,6 +182,7 @@ function! ReRead()
     doautoall Filetype
 endfunction
 
+
 " leader remap
 let mapleader=","
 
@@ -169,18 +190,21 @@ let mapleader=","
 noremap <Leader>W :w !sudo tee % > /dev/null
 
 " clear trailing whitespace
-autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,python,txt autocmd BufWritePre <buffer> %s/\s\+$//e
 noremap <Leader>w :%s/\s\+$//e
+
+" the_silver_searcher
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
 " \l       : list buffers
 " \b \f \g : go back/forward/last-used
 " \1 \2 \3 : go to buffer 1/2/3 etc
-nnoremap <Leader>l :ls<CR>
-nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>
-nnoremap <Leader>g :e#<CR>
+nnoremap <Leader>bl :ls<CR>
+nnoremap <Leader>bb :bp<CR>
+nnoremap <Leader>bf :bn<CR>
+nnoremap <Leader>bg :e#<CR>
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
 nnoremap <Leader>3 :3b<CR>
@@ -191,7 +215,7 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
-nnoremap <Leader>t :tabp<CR>
+nnoremap <Leader>bt :tabp<CR>
 
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>

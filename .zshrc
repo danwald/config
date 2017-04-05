@@ -5,7 +5,7 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 #pplugins=(git brew docker aws python redis-cli danwald)
 plugins=(git danwald awsshutils)
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
@@ -66,3 +66,6 @@ export DANWALD_CONFIG=$HOME/sandbox/config
 export DANWALD_VENV_HOOKS=$DANWALD_CONFIG/virtualenvwrapper_hooks
 export DANWALD_GIT_PRE_COMMIT=$DANWALD_CONFIG/.pre-commit-config.yaml
 export GIT_TEMPLATE_DIR=$DANWALD_CONFIG/git_hooks
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8

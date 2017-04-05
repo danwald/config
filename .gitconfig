@@ -25,9 +25,9 @@
     dump = cat-file -p
     ls = ls-files
     lsu = ls-files -v | grep -e '^[a-z]'
-    force-tag-update-push = "!f() { git tag -fam '${1}' ${1} && git push -f origin ${1}; };f "
-    forget-rerere = "!f() { git rerere forget ${@} && git checkout -m ${@}; };f "
+    #force-tag-update-push = "!f() { git tag -fam '${1}' ${1} && git push -f origin ${1}; };f "
     squash-to = "!f() { git reset --hard ${1} && git merge --squash HEAD@{1};};f "
+    flake8 = "!git diff HEAD^ | flake8 --diff"
 [merge]
     tool = meld
 [rerere]
