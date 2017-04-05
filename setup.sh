@@ -21,7 +21,7 @@ mkdir ~/.oh-my-zsh/plugins/danwald/
 ln -sfv $DIR/danwald.plugin.zsh ~/.oh-my-zsh/plugins/danwald/danwald.plugin.zsh
 
 echo "Installing vim's xoria256 .. "
-curl -LSs https://raw2.github.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim -o  .vim/colors/xoria256.vim
+curl -LSs https://raw.githubusercontent.com/vim-scripts/xoria256.vim/master/colors/xoria256.vim -o  .vim/colors/xoria256.vim
 
 echo "Changing your shell to zsh .."
 chsh -s `which zsh` $USER
