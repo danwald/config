@@ -1,0 +1,9 @@
+*/taxonomy_helpers_include*.py
+tests
+*js
+.git
+*.css
+*/build/*
+*/tests/*
+*/test/*
+*/media/*

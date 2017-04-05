@@ -13,6 +13,7 @@ ln -sfv $DIR/.zshrc .zshrc
 ln -sfv $DIR/.ackrc .ackrc
 ln -sfv $DIR/flake8 ~/.config/flake8
 ln -sfv $DIR/.ctags .ctags
+ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.byobu/keybindings.tmux .byobu/keybindings.tmux
 
 echo "Installing oh-my-zsh .. "
