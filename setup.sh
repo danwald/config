@@ -15,6 +15,7 @@ ln -sfv $DIR/flake8 ~/.config/flake8
 ln -sfv $DIR/.ctags .ctags
 ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.byobu/keybindings.tmux .byobu/keybindings.tmux
+ln -sfv $DIR/.byobu/.tmux.conf .byobu/.tmux.conf
 ln -sfv $DIR/.hammerspoon .
 
 echo "Installing oh-my-zsh .. "

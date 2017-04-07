@@ -23,7 +23,7 @@ Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim.git'
-Plugin 'vim-scripts/cscope.vim.git'
+"Plugin 'vim-scripts/cscope.vim.git'
 Plugin 'fisadev/vim-isort'
 
 
@@ -217,6 +217,8 @@ nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
 nnoremap <Leader>bt :tabp<CR>
 
+" OSX copy/paste
+set clipboard=unnamed
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
