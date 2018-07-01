@@ -1,6 +1,5 @@
 "Created by Danny S. Crasto
 set nocompatible              " be iMproved, required
-"filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,9 +15,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/AutoTag.git'
 Bundle 'nvie/vim-flake8'
-Bundle 'airblade/vim-gitgutter'
 Bundle 'ervandew/supertab'
-Bundle 'fatih/vim-go'
 Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
@@ -44,11 +41,12 @@ highlight link Flake8_Naming     WarningMsg
 highlight link Flake8_PyFlake    WarningMsg
 autocmd FileType python map <buffer> <Leader>F :call Flake8()<CR>
 " onmi-complete
-filetype plugin on
+filetype plugin indent on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType python setlocal tabstop=4
 " numbers plugin toggle
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
@@ -92,16 +90,6 @@ nnoremap  <Leader>fe :call cscope#find('e', expand('<cword>'))<CR>
 nnoremap  <Leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <Leader>fi :call cscope#find('i', expand('<cword>'))<CR>
-
-" sets tab space to 4 chars of spaces
-set sts=4
-set ts=4
-set sw=4
-set et
-
-"sets smartindent on
-set smartindent
-set autoindent
 
 syntax on
 
@@ -165,6 +153,17 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "taglist plugin
 filetype plugin indent on
+
+" sets tab space to 4 chars of spaces
+set sts=4
+set ts=4
+set sw=4
+set et
+
+"sets smartindent on
+set smartindent
+set autoindent
+
 
 "set t_kb=<BS>
 "fixdel
