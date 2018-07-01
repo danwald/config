@@ -20,8 +20,9 @@ Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim.git'
+Plugin 'junegunn/fzf.vim'
 "Plugin 'vim-scripts/cscope.vim.git'
-Plugin 'fisadev/vim-isort'
+"Plugin 'fisadev/vim-isort'
 
 
 call vundle#end()            " required
@@ -228,4 +229,12 @@ nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 nnoremap <space> za
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
-set laststatus=2
+"set laststatus=2
+
+"iSort
+map <leader>i :Isort<cr>
+command! -range=% Isort :<line1>,<line2>! isort -
+
+"fzf
+set rtp+=/usr/local/opt/fzf
+
