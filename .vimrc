@@ -62,8 +62,7 @@ nmap gH <Plug>GitGutterPrevHunk
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
-let g:Tlist_WinWidth=45
-" nerdtree
+let g:Tlist_WinWidth=45 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$']
@@ -203,7 +202,7 @@ vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 "toggle spelling
-nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
+nmap <Leader>S :setlocal spell! spelllang=en_us<CR>
 
 " Enable folding with the spacebar
 nnoremap <space> za
@@ -216,5 +215,12 @@ command! -range=% Isort :<line1>,<line2>! isort -
 
 "fzf
 set rtp+=/usr/local/opt/fzf
+nnoremap <leader>h :History<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>c :Commits<CR>
+nnoremap <leader>s :Ag<CR>
+nnoremap <leader>t :Tags<CR>
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
