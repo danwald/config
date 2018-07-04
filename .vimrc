@@ -72,26 +72,6 @@ let g:SimpylFold_docstring_preview=1
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 set completeopt+=menuone,longest,preview
-" csscope
-nnoremap <Leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
-nnoremap <Leader>l :call ToggleLocationList()<CR>
-" s: Find this C symbol
-nnoremap  <Leader>fs :call cscope#find('s', expand('<cword>'))<CR>
-" g: Find this definition
-nnoremap  <Leader>fg :call cscope#find('g', expand('<cword>'))<CR>
-" d: Find functions called by this function
-nnoremap  <Leader>fd :call cscope#find('d', expand('<cword>'))<CR>
-" c: Find functions calling this function
-nnoremap  <Leader>fc :call cscope#find('c', expand('<cword>'))<CR>
-" t: Find tkis text string
-nnoremap  <Leader>ft :call cscope#find('t', expand('<cword>'))<CR>
-" e: Find this egrep pattern
-nnoremap  <Leader>fe :call cscope#find('e', expand('<cword>'))<CR>
-" f: Find this file
-nnoremap  <Leader>ff :call cscope#find('f', expand('<cword>'))<CR>
-" i: Find files #including this file
-nnoremap  <Leader>fi :call cscope#find('i', expand('<cword>'))<CR>
-
 syntax on
 
 " shows matching brackets
@@ -228,7 +208,6 @@ nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 " Enable folding with the spacebar
 nnoremap <space> za
 
-set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
 "set laststatus=2
 
 "iSort
@@ -238,3 +217,4 @@ command! -range=% Isort :<line1>,<line2>! isort -
 "fzf
 set rtp+=/usr/local/opt/fzf
 
+set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
