@@ -1,6 +1,7 @@
 # This hook is sourced after this virtualenv is deactivated.
 #
-
+# If  $ENV_FILE is set see `postactivate`  which is the envs vars as export statements one per line
+# when you `deactivate` this will clear the envs from the shell
 if [[ ! -z "$ENV_FILE" ]];
 then
     for env in `cat $ENV_FILE | cut -f2 -d' ' | cut -f1 -d'='`

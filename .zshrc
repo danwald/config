@@ -62,6 +62,7 @@ function dtags(){
 
 export EDITOR=vim
 export ENV_DIR=$HOME/envs
+export PY_LINCHK_DIR=$HOME/sandbox/dotfiles/python
 export DANWALD_CONFIG=$HOME/sandbox/config
 export DANWALD_VENV_HOOKS=$DANWALD_CONFIG/virtualenvwrapper_hooks
 export DANWALD_GIT_PRE_COMMIT=$DANWALD_CONFIG/.pre-commit-config.yaml
