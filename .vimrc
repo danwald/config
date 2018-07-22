@@ -224,3 +224,4 @@ nnoremap <leader>s :Ag<CR>
 nnoremap <leader>t :Tags<CR>
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
+set laststatus=2
