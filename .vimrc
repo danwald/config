@@ -18,13 +18,9 @@ Bundle 'nvie/vim-flake8'
 Bundle 'ervandew/supertab'
 Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
-Plugin 'tmhedberg/SimpylFold'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'junegunn/fzf.vim'
-"Plugin 'vim-scripts/cscope.vim.git'
-"Plugin 'fisadev/vim-isort'
-
-
+Plugin 'gryf/pylint-vim.git'
 call vundle#end()            " required
 
 " Plugin options
@@ -45,19 +41,12 @@ autocmd FileType python map <buffer> <Leader>F :call Flake8()<CR>
 filetype plugin indent on
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType python setlocal tabstop=4
 " numbers plugin toggle
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 let g:numbers_exclude = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'taglist', 'minibufexpl', 'nerdtree']
-" gitgutter
-let g:gitgutter_eager = 0
-let g:gitgutter_realtime = 0
-let g:gitgutter_sign_column_always = 1
-nmap gh <Plug>GitGutterNextHunk
-nmap gH <Plug>GitGutterPrevHunk
 " taglist
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
@@ -66,13 +55,11 @@ let g:Tlist_WinWidth=45 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$']
-" simplefold
-let g:SimpylFold_docstring_preview=1
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 set completeopt+=menuone,longest,preview
-syntax on
 
+syntax on
 " shows matching brackets
 set showmatch
 
