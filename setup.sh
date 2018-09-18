@@ -17,7 +17,7 @@ ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.byobu/keybindings.tmux .byobu/keybindings.tmux
 ln -sfv $DIR/.byobu/.tmux.conf .byobu/.tmux.conf
 ln -sfv $DIR/.hammerspoon .
-ln -sfv $DIR/bin/sag.py ~/bin/sag.py
+ln -sfv $DIR/bin/sag.py ~/bin/sag
 
 echo "Installing oh-my-zsh .. "
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
