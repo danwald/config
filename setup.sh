@@ -5,7 +5,7 @@ DIR=`pwd -P $0`
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
-mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config
+mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.screenrc .screenrc
 ln -sfv $DIR/.gitconfig .gitconfig
@@ -17,6 +17,7 @@ ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.byobu/keybindings.tmux .byobu/keybindings.tmux
 ln -sfv $DIR/.byobu/.tmux.conf .byobu/.tmux.conf
 ln -sfv $DIR/.hammerspoon .
+ln -sfv $DIR/bin/sag.py ~/bin/sag.py
 
 echo "Installing oh-my-zsh .. "
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
