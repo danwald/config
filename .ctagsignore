@@ -3,6 +3,7 @@ tests
 *js
 .git
 *.css
+*.pyc
 */build/*
 */tests/*
 */test/*
