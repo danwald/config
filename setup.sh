@@ -28,8 +28,15 @@ curl -LSs https://raw.githubusercontent.com/vim-scripts/xoria256.vim/master/colo
 echo "Changing your shell to zsh .."
 chsh -s `which zsh` $USER
 
-echo "Installing vundle for your vim's plugin needs ..."
+echo "Installing vundle for your vim's plugin needs .."
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo "Installing gpakosz's .tmux .."
+pushd $HOME > /dev/null
+git clone https://github.com/gpakosz/.tmux.git
+ln -sfv .tmux/.tmux.conf
+cp -v .tmux/.tmux.conf.local .
+popd > /dev/null
 
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 popd > /dev/null
