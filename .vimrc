@@ -13,7 +13,6 @@ Bundle 'wakatime/vim-wakatime'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/AutoTag.git'
 Bundle 'nvie/vim-flake8'
 Bundle 'ervandew/supertab'
 Bundle 'gregsexton/gitv'
@@ -21,6 +20,7 @@ Bundle 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'junegunn/fzf.vim'
 Plugin 'gryf/pylint-vim.git'
+Plugin 'ludovicchabant/vim-gutentags.git'
 call vundle#end()            " required
 
 " Plugin options
@@ -58,6 +58,11 @@ let NERDTreeIgnore = ['\.pyc$']
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 set completeopt+=menuone,longest,preview
+" gutentags
+"let g:gutentags_define_advanced_commands=1
+"let g:gutentags_trace=1
+let g:gutentags_ctags_executable='/usr/local/bin/ctags'
+
 
 syntax on
 " shows matching brackets
@@ -211,4 +216,5 @@ nnoremap <leader>s :Ag<CR>
 nnoremap <leader>t :Tags<CR>
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
+set statusline+=%{gutentags#statusline()}
 set laststatus=2
