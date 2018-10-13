@@ -85,9 +85,6 @@ function kp()
     fi
 }
 
-#my paths
-export PATH=/usr/bin:/usr/local/bin:/sbin/:$PATH:
-
 # function for setting terminal title
 title() 
 {
