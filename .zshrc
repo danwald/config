@@ -70,3 +70,6 @@ export GIT_TEMPLATE_DIR=$DANWALD_CONFIG/git_hooks
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export GOPATH="$HOME/sandbox/go"
+export GOBIN="$GOPATH/go"
+export PATH=$PATH:$GOBIN/bin
