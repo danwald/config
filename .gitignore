@@ -1,2 +1,4 @@
 *.swp
 tags
+.DS_Store
+.notags
