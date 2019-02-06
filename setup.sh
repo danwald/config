@@ -38,5 +38,10 @@ ln -sfv .tmux/.tmux.conf
 cp -v .tmux/.tmux.conf.local .
 popd > /dev/null
 
+echo "Downloading Tmux plugin Manager"
+echo "Ammending tmux.local with TmuxPluginManager|tmux-resurrect|tmux|tmux-continuum"
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
+
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 popd > /dev/null
