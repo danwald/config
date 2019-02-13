@@ -22,6 +22,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'gryf/pylint-vim.git'
 Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'fatih/vim-go.git'
+Plugin 'tpope/vim-obsession'
 call vundle#end()            " required
 
 " Plugin options
