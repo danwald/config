@@ -8,3 +8,4 @@ tests
 */tests/*
 */test/*
 */media/*
+*.pb
