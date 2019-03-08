@@ -140,3 +140,12 @@ ch() {
   awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
   fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
+
+reset_network()
+{
+	ADAPTER=${2:=en0}
+	echo "Resetting network adapter $ADAPTER"
+	sudo ifconfig $ADAPTER down
+	sudo route -n flush
+	sudo ifconfig $ADAPTER up
+}
