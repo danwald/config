@@ -145,7 +145,5 @@ reset_network()
 {
 	ADAPTER=${2:=en0}
 	echo "Resetting network adapter $ADAPTER"
-	sudo ifconfig $ADAPTER down
-	sudo route -n flush
-	sudo ifconfig $ADAPTER up
+	sudo ifconfig $ADAPTER down && sudo route -n flush && sudo ifconfig $ADAPTER up
 }
