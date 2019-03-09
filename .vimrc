@@ -129,14 +129,12 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 filetype plugin indent on
 
 " sets tab space to 4 chars of spaces
-set sts=4
-set ts=4
-set sw=4
-set et
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
 
 "sets smartindent on
-set smartindent
-set autoindent
+"set smartindent
+"set autoindent
 
 
 "set t_kb=<BS>
