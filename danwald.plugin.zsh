@@ -131,8 +131,8 @@ ch() {
   local cols sep
   cols=$(( COLUMNS / 3 ))
   sep='{::}'
-
-  cp -f ~/Library/Application\ Support/Google/Chrome/Profile\ 1/History /tmp/h
+  CHROME_HISTORY_FILE=${CHROME_HISTORY_FILE:=$HOME/Library/Application\ Support/Google/Chrome/Default/History}
+  cp -f $CHROME_HISTORY_FILE /tmp/h
 
   sqlite3 -separator $sep /tmp/h \
     "select substr(title, 1, $cols), url
