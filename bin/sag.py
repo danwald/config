@@ -19,7 +19,6 @@ SSH_FILES = (
     'id_rsa',
     'id_rsa_dbz_prod',
     'id_rsa_dbz_github',
-    'id_rsa_dubizzle_test',
 )
 
 def cmd_run(cmd):
