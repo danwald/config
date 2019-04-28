@@ -8,3 +8,12 @@
     -   id: detect-aws-credentials
     -   id: detect-private-key
     -   id: end-of-file-fixer
+- repo: local
+    hooks:
+    -   id: git-lint
+        name: git-lint
+        description: Executes linting on python files diff.
+        entry: git lint
+        additional_dependencies: [git-lint]
+        language: python
+        types: [python]
