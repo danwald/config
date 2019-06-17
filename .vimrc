@@ -23,6 +23,7 @@ Plugin 'gryf/pylint-vim.git'
 Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'fatih/vim-go.git'
 Plugin 'tpope/vim-obsession'
+Plugin 'morhetz/gruvbox'
 call vundle#end()            " required
 
 " Plugin options
@@ -88,10 +89,8 @@ nmap <c-l> <c-w>l
 " 256Colors terminal
 set t_Co=256
 
-
-colorscheme xoria256
-"colorscheme desert
-"colorscheme pablo
+colorscheme gruvbox
+set background=dark
 
 "using Source Code Pro
 set anti enc=utf-8
