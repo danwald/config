@@ -101,9 +101,9 @@ set cindent
 "search backwards from pwd-root for tag files
 :set tags=./tags;
 
-set tags+=~/.vim/tags/py2.7.tags;
-set tags+=~/.vim/tags/dubizzle.tags;
-set tags+=~/.vim/tags/cpp.tags
+"create tags for virtualenv sources via http://robertodealmeida.posthaven.com/using-ctags-in-vim-with-a-python-virtualenv
+noremap ,T :!ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/site-packages<CR>
+set tags+=$VIRTUAL_ENV/tags
 
 "spelling en and doxygen comments
 "set spelllang=en_us
