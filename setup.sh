@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+#TODO: check and install zsh,curl,git linux/darwin
+#TODO: back out on error
+#TODO: git clone not idempotent
+#TODO: awsshuits omzsh not install
+#TODO: Vundle didn't install on clean
+
+
+
 set -e 
 DIR=`pwd -P $0`
 
