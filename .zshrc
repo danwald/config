@@ -4,7 +4,7 @@ CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 #pplugins=(git brew docker aws python redis-cli danwald)
-plugins=(git gitfast danwald awsshutils)
+plugins=(git gitfast danwald awsshutils fzf)
 export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
