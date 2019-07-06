@@ -7,10 +7,9 @@ set -e
 DIR=`pwd -P $0`
 case `uname` in
 Linux) PKGMGR='sudo apt-get' &&\
- PKG='ctags' &&\
- git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf &&\
-~/.fzf/install ;;
-Darwin) PKGMGR='brew' && PKG='exuberant-ctags fzf';;
+PKG='ctags' &&\
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ;;
+Darwin) PKGMGR='brew' && PKG='exuberant-ctags fzf' ;;
 esac
 
 PKGS="zsh curl git vim-runtime vim-gui-common"
