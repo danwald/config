@@ -13,7 +13,7 @@ Darwin) PKGMGR='brew' && PKG='exuberant-ctags fzf' ;;
 esac
 
 PKGS="zsh curl git vim-runtime vim-gui-common"
-PKGS="PKGS $PKG"
+PKGS="$PKGS $PKG"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update
