@@ -35,8 +35,8 @@ ln -sfv $DIR/bin/sag.py ~/bin/sag
 
 echo "Installing oh-my-zsh .. "
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-mkdir ~/.oh-my-zsh/plugins/danwald/
-ln -sfv $DIR/danwald.plugin.zsh ~/.oh-my-zsh/plugins/danwald/danwald.plugin.zsh
+mkdir ~/.oh-my-zsh/custom/plugins/danwald/
+ln -sfv $DIR/danwald.plugin.zsh ~/.oh-my-zsh/custom/plugins/danwald/danwald.plugin.zsh
 
 echo "Changing your shell to zsh .."
 chsh -s `which zsh` $USER
