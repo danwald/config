@@ -13,7 +13,7 @@ trap cleanup 1 2 3 6
 DIR=`dirname "$0"`
 
 case `uname` in
-Linux) PKGMGR='apt-get' && PKG='ctags' ;;
+Linux) PKGMGR='sudo apt-get' && PKG='ctags' ;;
 Darwin) PKGMGR='brew' && PKG='exuberant-ctags' ;;
 esac
 
