@@ -5,6 +5,7 @@ ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 plugins=(git gitfast danwald fzf)
 [ -f ~/.zshrc_local ] && . ~/.zshrc_local
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH
@@ -74,3 +75,4 @@ export LC_ALL=en_US.UTF-8
 export GOPATH="$HOME/sandbox/go"
 export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN/bin
+
