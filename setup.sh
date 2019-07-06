@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-
 set -e 
 cleanup()
 {
-	echo "Error detected. Cleaning up"
-	rm -rf tmux.git ~/.tmux/plugins/tpm ~/.oh-my-zsh ~/.vim/bundle/Vundle.vim\
-		 $HOME/.tmux.conf.local\ $HOME/.tmux/.tmux.conf\
-		 ~/.vim/plugins/google_python_style.vim
+        echo "Error detected. Cleaning up"
+        rm -rf tmux.git ~/.tmux/plugins/tpm ~/.oh-my-zsh ~/.vim/bundle/Vundle.vim\
+                $HOME/.tmux.conf.local\ $HOME/.tmux/.tmux.conf\
+                 ~/.vim/plugins/google_python_style.vim
 }
 
 trap cleanup 1 2 3 6 14 15
-DIR=`dirname "$0"`
+pushd `dirname "$0"` > /dev/null
+DIR=`pwd`
+popd >/dev/null > /dev/null
 
 case `uname` in
 Linux) PKGMGR='sudo apt-get' && PKG='ctags' ;;
