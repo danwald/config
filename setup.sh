@@ -36,7 +36,8 @@ ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.zshrc .zshrc
 ln -sfv $DIR/.ackrc .ackrc
 ln -sfv $DIR/flake8 ~/.config/flake8
-ln -sfv $DIR/.ctags .ctags
+cp -v $DIR/.ctags .ctags
+echo "---exclude=@$HOME/.ctagsignore" >> .ctags
 ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.hammerspoon .
 ln -sfv $DIR/bin/sag.py ~/bin/sag

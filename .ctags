@@ -1,3 +1,2 @@
 --tag-relative=no
 --python-kinds=-i
---exclude=@/Users/danny.crasto/.ctagsignore
