@@ -3,7 +3,6 @@
 #TODO: back out on error
 #TODO: git clone not idempotent
 #TODO: awsshuits ohzsh not install
-#TODO: Vundle didn't install on clean
 
 set -e 
 DIR=`pwd -P $0`
@@ -63,4 +62,6 @@ git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
+echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
+echo '+vim +PluginInstall +qall'
 popd > /dev/null
