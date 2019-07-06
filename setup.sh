@@ -4,9 +4,10 @@
 #TODO: git clone not idempotent
 
 set -e 
-DIR=`pwd -P $0`
+DIR=`dirname "$0"`
+
 case `uname` in
-Linux) PKGMGR='sudo apt-get' && PKG='ctags' ;;
+Linux) PKGMGR='apt-get' && PKG='ctags' ;;
 Darwin) PKGMGR='brew' && PKG='exuberant-ctags' ;;
 esac
 
