@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-#TODO: back out on error
-#TODO: git clone not idempotent
-
 set -e 
+cleanup()
+{
+	echo "Error detected. Cleaning up"
+	rm -rf tmux.git ~/.tmux/plugins/tpm ~/.oh-my-zsh ~/.vim/bundle/Vundle.vim\
+		 $HOME/.tmux.conf.local\ $HOME/.tmux/.tmux.conf\
+		 ~/.vim/plugins/google_python_style.vim
+}
+
+trap cleanup 1 2 3 6
 DIR=`dirname "$0"`
 
 case `uname` in
@@ -66,3 +72,5 @@ echo "All good in the hood. Re-login and don't overwrite the zsh config when pro
 echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
 echo '+vim +PluginInstall +qall'
 popd > /dev/null
+
+
