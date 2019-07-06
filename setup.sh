@@ -9,7 +9,7 @@ cleanup()
 		 ~/.vim/plugins/google_python_style.vim
 }
 
-trap cleanup 1 2 3 6
+trap cleanup 1 2 3 6 14 15
 DIR=`dirname "$0"`
 
 case `uname` in
