@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-#TODO: check and install zsh,curl,git,vim-runtime,vim-gui-common,exuberant-ctags,fzf(git) linux|darwin
 #TODO: back out on error
 #TODO: git clone not idempotent
 #TODO: awsshuits ohzsh not install
@@ -8,6 +7,18 @@
 
 set -e 
 DIR=`pwd -P $0`
+case `uname` in
+Linux) PKGMGR='sudo apt-get' && PKG='ctags' ;;
+Darwin) PKGMGR='brew' && PKG='exuberant-ctags';;
+esac
+
+PKGS="zsh curl git vim-runtime vim-gui-common"
+PKGS="PKGS $PKG"
+
+
+echo "Updating your packages and install pre-requisites"
+$PKGMGR update
+$PKGMGR install zsh curl git vim-runtime vim-gui-common exuberant-ctags
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
