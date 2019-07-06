@@ -3,8 +3,10 @@ ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-#pplugins=(git brew docker aws python redis-cli danwald)
-plugins=(git gitfast danwald awsshutils fzf)
+plugins=(git gitfast danwald fzf)
+[ -f ~/.zshrc_local ] && . ~/.zshrc_local
+
+
 export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -15,7 +17,6 @@ alias ds='dirs -pv'
 alias git_mod="git status | grep modified | awk '{print \$2}'"
 alias gdanwald="git config --local user.email danwald79@gmail.com"
 
-[ -f ~/.zshrc_local ] && . ~/.zshrc_local
 
 unsetopt share_history
 
