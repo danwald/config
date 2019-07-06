@@ -2,10 +2,10 @@
 set -e 
 cleanup()
 {
-        echo "Error detected. Cleaning up"
-        rm -rf tmux.git ~/.tmux/plugins/tpm ~/.oh-my-zsh ~/.vim/bundle/Vundle.vim\
-                $HOME/.tmux.conf.local\ $HOME/.tmux/.tmux.conf\
-                 ~/.vim/plugins/google_python_style.vim
+    echo "Error detected. Cleaning up"
+    rm -rf ~/.tmux ~/.tmux/plugins/tpm ~/.oh-my-zsh ~/.vim/bundle/Vundle.vim\
+            $HOME/.tmux.conf.local\ $HOME/.tmux/.tmux.conf\
+         ~/.vim/plugins/google_python_style.vim ~/.fzf
 }
 
 trap cleanup 1 2 3 6 14 15
