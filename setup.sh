@@ -6,10 +6,8 @@
 set -e 
 DIR=`pwd -P $0`
 case `uname` in
-Linux) PKGMGR='sudo apt-get' &&\
-PKG='ctags' &&\
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf ;;
-Darwin) PKGMGR='brew' && PKG='exuberant-ctags fzf' ;;
+Linux) PKGMGR='sudo apt-get' && PKG='ctags' ;;
+Darwin) PKGMGR='brew' && PKG='exuberant-ctags' ;;
 esac
 
 PKGS="zsh curl git vim-runtime vim-gui-common"
@@ -18,6 +16,9 @@ PKGS="$PKGS $PKG"
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update
 $PKGMGR install zsh curl git vim-runtime vim-gui-common exuberant-ctags
+
+echo "Install fzf"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
