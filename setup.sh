@@ -14,7 +14,7 @@ DIR=`pwd`
 popd >/dev/null > /dev/null
 
 case `uname` in
-Linux) PKGMGR='sudo apt-get' && PKG='ctags' ;;
+Linux) PKGMGR='sudo apt-get -y' && PKG='ctags' ;;
 Darwin) PKGMGR='brew' && PKG='exuberant-ctags' ;;
 esac
 
