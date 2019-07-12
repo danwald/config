@@ -72,7 +72,7 @@ cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
-echo '+vim +PluginInstall +qall'
+echo 'vim +PluginInstall +qall'
 popd > /dev/null
 
 
