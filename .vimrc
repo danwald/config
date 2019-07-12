@@ -12,19 +12,17 @@ Plugin 'gmarik/Vundle.vim'
 Bundle 'wakatime/vim-wakatime'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'mileszs/ack.vim'
 Bundle 'nvie/vim-flake8'
-Bundle 'ervandew/supertab'
 Bundle 'gregsexton/gitv'
 Bundle 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim.git'
 Plugin 'junegunn/fzf.vim'
 Plugin 'gryf/pylint-vim.git'
 Plugin 'ludovicchabant/vim-gutentags.git'
 Plugin 'fatih/vim-go.git'
 Plugin 'tpope/vim-obsession'
 Plugin 'morhetz/gruvbox'
-call vundle#end()            " required
+Plugin 'vim-syntastic/syntastic'
+call vundle#end() " required
 
 " Plugin options
 " flake
@@ -40,32 +38,25 @@ highlight link Flake8_Complexity WarningMsg
 highlight link Flake8_Naming     WarningMsg
 highlight link Flake8_PyFlake    WarningMsg
 autocmd FileType python map <buffer> <Leader>F :call Flake8()<CR>
-" onmi-complete
-filetype plugin indent on
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType python setlocal tabstop=4
-" numbers plugin toggle
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
-let g:numbers_exclude = ['unite', 'tagbar', 'startify', 'gundo', 'vimshell', 'w3m', 'taglist', 'minibufexpl', 'nerdtree']
 " taglist
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
-let g:Tlist_WinWidth=45 " nerdtree
+let g:Tlist_WinWidth=45 
+filetype plugin indent on
+" nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore = ['\.pyc$']
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-set completeopt+=menuone,longest,preview
 " gutentags
 "let g:gutentags_define_advanced_commands=1
 "let g:gutentags_trace=1
 let g:gutentags_ctags_executable='/usr/local/bin/ctags'
-
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 syntax on
 " shows matching brackets
@@ -124,24 +115,8 @@ let g:alternateNoDefaultAlternate=1
 highlight BadWhitespace ctermbg=red ctermfg=white guibg=#592929
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-"taglist plugin
-filetype plugin indent on
-
 " sets tab space to 4 chars of spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab expandtab
-
-
-"sets smartindent on
-"set smartindent
-"set autoindent
-
-
-"set t_kb=<BS>
-"fixdel
-
-"set foldmethod=indent
-"set foldlevelstart=10
-set nofoldenable
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
@@ -151,7 +126,6 @@ function! ReRead()
     bufdo e!
     doautoall Filetype
 endfunction
-
 
 " leader remap
 let mapleader=","
@@ -197,8 +171,6 @@ nmap <Leader>S :setlocal spell! spelllang=en_us<CR>
 
 " Enable folding with the spacebar
 nnoremap <space> za
-
-"set laststatus=2
 
 "iSort
 map <leader>i :Isort<cr>
