@@ -22,6 +22,7 @@ Plugin 'fatih/vim-go.git'
 Plugin 'tpope/vim-obsession'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'tmux-plugins/vim-tmux'
 call vundle#end() " required
 
 " Plugin options
@@ -186,6 +187,6 @@ nnoremap <leader>c :Commits<CR>
 nnoremap <leader>s :Ag<CR>
 nnoremap <leader>t :Tags<CR>
 
-set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]
+set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
 set laststatus=2
