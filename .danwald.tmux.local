@@ -9,12 +9,20 @@ set -g @tpm_plugins '          \
   tmux-plugins/tmux-sensible   \
   tmux-plugins/tmux-resurrect  \
   tmux-plugins/tmux-continuum  \
+  samoshkin/tmux-plugin-sysstat \
+
 '
 
 #Plugin settings
 set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
 set -g @resurrect-strategy-vim 'session'
+
+set -g @sysstat_cpu_view_tmpl '#[fg=#{cpu.color3}]CPU:#[default] #[fg=#{cpu.color},bg=#{cpu.color2}]#{cpu.pused}#[default]'
+set -g @sysstat_cpu_color_low "$color_level_ok default default"
+set -g @sysstat_cpu_color_medium "$color_level_warn default default"
+set -g @sysstat_cpu_color_stress "white,bold $color_level_stress $color_level_stress"
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in?format=4) , #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , | #{username}#{root}|#{hostname} | #{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg}'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
