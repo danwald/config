@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' && PKG='ctags' ;;
 Darwin) PKGMGR='brew' && PKG='exuberant-ctags' ;;
 esac
 
-PKGS="zsh curl git vim-runtime vim-gui-common"
+PKGS="zsh curl git vim-runtime vim-gui-common cmake"
 PKGS="$PKGS $PKG"
 
 echo "Updating your packages and install pre-requisites"
