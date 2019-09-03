@@ -55,8 +55,10 @@ let g:gutentags_ctags_executable='/usr/local/bin/ctags'
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_mode_map = {'mode':'passive'}
+nnoremap <F10> :SyntasticCheck<CR> :SyntasticToggleMode<CR> :w<CR>
 
 syntax on
 " shows matching brackets
