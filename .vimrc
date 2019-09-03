@@ -44,7 +44,6 @@ let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
 let g:Tlist_WinWidth=45 
-filetype plugin indent on
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -117,7 +116,8 @@ highlight BadWhitespace ctermbg=red ctermfg=white guibg=#592929
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " sets tab space to 4 chars of spaces
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab expandtab
+filetype plugin indent on
+set tabstop=4 expandtab shiftwidth=4 expandtab ai
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
