@@ -95,7 +95,7 @@ set cindent
 :set tags=./tags;
 
 "create tags for virtualenv sources via http://robertodealmeida.posthaven.com/using-ctags-in-vim-with-a-python-virtualenv
-noremap ,T :!ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/site-packages<CR>
+noremap ,T :!ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/<CR>
 set tags+=$VIRTUAL_ENV/tags
 
 "spelling en and doxygen comments
