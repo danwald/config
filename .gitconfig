@@ -3,6 +3,7 @@
 [core]
     editor = vim
     pager = less
+    excludesfile = /Users/danny.crasto/.gitignore
 [color]
     ui = true
     diff = true
