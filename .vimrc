@@ -52,6 +52,7 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:gutentags_define_advanced_commands=1
 "let g:gutentags_trace=1
 let g:gutentags_ctags_executable='/usr/local/bin/ctags'
+"[src, https://robertbasic.com/tags/gutentags/]
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
                             \ '*.phar', '*.ini', '*.rst', '*.md',
