@@ -4,3 +4,4 @@ tags
 .notags
 Session.vim
 *main
+.python-version
