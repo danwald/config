@@ -172,6 +172,7 @@ vmap <C-c> :w !pbcopy<CR><CR>
 
 "toggle spelling
 nmap <Leader>S :setlocal spell! spelllang=en_us<CR>
+autocmd FileType markdown text gitcommit setlocal spell
 
 " Enable folding with the spacebar
 nnoremap <space> za
