@@ -3,7 +3,7 @@ ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-plugins=(git gitfast danwald fzf)
+plugins=(git gitfast danwald fzf pyenv)
 [ -f ~/.zshrc_local ] && . ~/.zshrc_local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
