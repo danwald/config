@@ -5,3 +5,7 @@ tags
 Session.vim
 *main
 .python-version
+pw
+.flake8
+.isort.cfg
+pylintrc
