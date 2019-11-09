@@ -71,6 +71,11 @@ echo "Ammending tmux.local with TmuxPluginManager|tmux-resurrect|tmux|tmux-conti
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
 cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 
+echo "Overwritting .ssh/authorized_keys from danwald.me"
+mkdir -p ~/.ssh
+curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/
+
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
 echo 'vim +PluginInstall +qall'
