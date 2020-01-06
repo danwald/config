@@ -7,7 +7,7 @@ plugins=(git gitfast danwald fzf pyenv)
 [ -f ~/.zshrc_local ] && . ~/.zshrc_local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
+fpath+=~/.zfunc
 export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
