@@ -43,4 +43,6 @@
 [push]
 	default = simple
 [pull]
-	rebase = true
+    rebase = true
+[oh-my-zsh]
+	hide-dirty = 1
