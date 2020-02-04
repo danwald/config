@@ -23,6 +23,7 @@ Plugin 'tpope/vim-obsession'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'raimon49/requirements.txt.vim'
 call vundle#end() " required
 
 " Plugin options
