@@ -14,16 +14,15 @@ DIR=`pwd`
 popd >/dev/null > /dev/null
 
 case `uname` in
-Linux) PKGMGR='sudo apt-get -y' && PKG='ctags' ;;
-Darwin) PKGMGR='brew' && PKG='exuberant-ctags' ;;
+Linux) PKGMGR='sudo apt-get -y' ;;
+Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim-runtime vim-gui-common cmake"
-PKGS="$PKGS $PKG"
+PKGS="zsh curl git vim cmake ctags"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
-$PKGMGR install zsh curl git vim-runtime vim-gui-common exuberant-ctags > /dev/null
+$PKGMGR install $PKGS > /dev/null
 
 echo "Install fzf"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf > /dev/null
@@ -80,5 +79,3 @@ echo "All good in the hood. Re-login and don't overwrite the zsh config when pro
 echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
 echo 'vim +PluginInstall +qall'
 popd > /dev/null
-
-
