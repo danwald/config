@@ -11,6 +11,7 @@ fpath+=~/.zfunc
 export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
+[ -f ~/.zshrc_dbz ] && . ~/.zshrc_dbz
 
 alias cd='pushd > /dev/null'
 alias pd='popd > /dev/null'
@@ -75,4 +76,3 @@ export LC_ALL=en_US.UTF-8
 export GOPATH="$HOME/sandbox/go"
 export GOBIN="$GOPATH/bin"
 export PATH=$PATH:$GOBIN/bin
-
