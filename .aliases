@@ -1,0 +1,19 @@
+alias cd='pushd > /dev/null'
+alias pd='popd > /dev/null'
+alias ds='dirs -pv'
+alias git_mod="git status | grep modified | awk '{print \$2}'"
+alias gdanwald="git config --local user.email danwald79@gmail.com"
+alias dps='docker ps'
+alias dim='docker images'
+#https://www.calazan.com/docker-cleanup-commands/
+#Kill all running containers.
+alias dkall='docker kill $(docker ps -q)'
+
+#Delete all stopped containers.
+alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -aq)'
+
+#Delete all untagged images.
+alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qa)'
+
+alias ctags="/usr/local/bin/ctags"
+alias ls='ls --color'

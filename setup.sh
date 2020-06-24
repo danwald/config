@@ -34,6 +34,8 @@ ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
 ln -sfv $DIR/.zshrc .zshrc
+ln -sfv $DIR/.aliases .aliases
+ln -sfv $DIR/.envs .envs
 ln -sfv $DIR/.ackrc .ackrc
 ln -sfv $DIR/flake8 ~/.config/flake8
 cp -v $DIR/.ctags .ctags
