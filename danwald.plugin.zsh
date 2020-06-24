@@ -85,6 +85,33 @@ function kp()
     fi
 }
 
+function dbash(){
+    if test -z "$1"
+    then
+        container=`docker ps -q | head -1`
+        echo "Using last active container $container"
+    else
+        container=$1
+    fi
+    docker exec -it $container bash
+}
+
+function drun(){
+    if test -z "$1"
+    then
+        container=`docker images -q | head -1`
+        echo "Using last image container $container"
+    else
+        container=$1
+    fi
+    docker run -d $container
+}
+
+function dtags(){
+    curl -s -S "https://registry.hub.docker.com/v2/repositories/$@/tags/" | jq '."results"[]["name"]' |sort
+}
+
+
 # function for setting terminal title
 title() 
 {

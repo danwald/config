@@ -22,27 +22,6 @@ alias gdanwald="git config --local user.email danwald79@gmail.com"
 
 unsetopt share_history
 
-function dbash(){
-    if test -z "$1"
-    then
-        container=`docker ps -q | head -1`
-        echo "Using last active container $container"
-    else
-        container=$1
-    fi
-    docker exec -it $container bash
-}
-
-function drun(){
-    if test -z "$1"
-    then
-        container=`docker images -q | head -1`
-        echo "Using last image container $container"
-    else
-        container=$1
-    fi
-    docker run -d $container
-}
 
 alias dps='docker ps'
 alias dim='docker images'
@@ -57,10 +36,6 @@ alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker 
 #Delete all untagged images.
 alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qa)'
 
-
-function dtags(){
-    curl -s -S "https://registry.hub.docker.com/v2/repositories/$@/tags/" | jq '."results"[]["name"]' |sort
-}
 
 
 export EDITOR=vim
