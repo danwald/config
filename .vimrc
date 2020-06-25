@@ -189,7 +189,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>c :Commits<CR>
-nnoremap <leader>s :Ag<CR>
+nnoremap <leader>s :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}

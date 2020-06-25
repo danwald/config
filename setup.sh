@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags"
+PKGS="zsh curl git vim cmake ctags ripgrep"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
