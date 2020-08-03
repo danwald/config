@@ -102,8 +102,8 @@ set guifont=Source\ Code\ Pro\ 11
 :set tags=./tags;
 
 "create tags for virtualenv sources via http://robertodealmeida.posthaven.com/using-ctags-in-vim-with-a-python-virtualenv
-noremap ,T :!ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/<CR>
-set tags+=$VIRTUAL_ENV/tags
+"noremap ,T :!ctags -R -f $VIRTUAL_ENV/tags $VIRTUAL_ENV/lib/python*/<CR>
+"et tags+=$VIRTUAL_ENV/tags
 
 set wildmode=list:longest,full
 
@@ -123,6 +123,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " sets tab space to 4 chars of spaces
 filetype plugin indent on
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 noexpandtab
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
