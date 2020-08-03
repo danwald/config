@@ -24,6 +24,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'raimon49/requirements.txt.vim'
+Plugin 'tmhedberg/SimpylFold'
 call vundle#end() " required
 
 " Plugin options
@@ -175,7 +176,9 @@ vmap <C-c> :w !pbcopy<CR><CR>
 nmap <Leader>S :setlocal spell! spelllang=en_us<CR>
 autocmd FileType markdown,text,gitcommit setlocal spell
 
-" Enable folding with the spacebar
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 nnoremap <space> za
 
 "iSort
