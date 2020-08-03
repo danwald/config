@@ -4,7 +4,7 @@ ZSH_THEME="bira"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
-plugins=(git gitfast danwald fzf pyenv awsshutils)
+plugins=(git gitfast danwald fzf)
 
 source $ZSH/oh-my-zsh.sh
 
