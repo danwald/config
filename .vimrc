@@ -196,6 +196,9 @@ nnoremap <leader>c :Commits<CR>
 nnoremap <leader>s :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
+" gitblame via https://redd.it/i50pce
+nmap <silent><Leader>G :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
+
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
 set laststatus=2
