@@ -5,10 +5,11 @@ CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 COMPLETION_WAITING_DOTS="false"
 plugins=(git gitfast danwald fzf)
+#loading locals prior src omz to update local plugins
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.envs ] && source ~/.envs
 [ -f ~/.aliases ] && source ~/.aliases
