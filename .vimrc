@@ -123,7 +123,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " sets tab space to 4 chars of spaces
 filetype plugin indent on
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 noexpandtab
+autocmd Filetype html,javascript setlocal ts=2 sw=2 sts=0 noexpandtab
 
 "automatically source vimrc on write
 au! BufWritePost .vimrc source %
@@ -166,7 +166,6 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
-nnoremap <Leader><tab> :tabp<CR>
 
 " OSX copy/paste
 set clipboard=unnamed
