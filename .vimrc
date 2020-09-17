@@ -72,6 +72,8 @@ nnoremap <F10> :SyntasticCheck<CR> :SyntasticToggleMode<CR> :w<CR>
 syntax on
 " shows matching brackets
 set showmatch
+"reload file on change
+set autoread
 
 " highlighs last seach item
 set hls
