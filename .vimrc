@@ -25,6 +25,11 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'raimon49/requirements.txt.vim'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'dense-analysis/ale'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'deoplete-plugins/deoplete-jedi'
 call vundle#end() " required
 
 " Plugin options
@@ -45,7 +50,7 @@ autocmd FileType python map <buffer> <Leader>F :call Flake8()<CR>
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
 let g:Tlist_Auto_Open=0
-let g:Tlist_WinWidth=45 
+let g:Tlist_WinWidth=45
 " nerdtree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -118,6 +123,21 @@ let g:alternateNoDefaultAlternate=1
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%91v.\+/
 
+" ALE
+let g:ale_fixers = {
+ \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+ \ 'html': ['prettier'],
+ \}
+let g:ale_linters = {
+ \ 'html': ['htmlhint'],
+ \ 'json': ['jsonlint'],
+ \ 'python': ['flake8'],
+ \ 'xml': ['xmllint'],
+ \ 'css': ['csslint'],
+ \}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
+
 "flag unnecessary whitespace
 highlight BadWhitespace ctermbg=red ctermfg=white guibg=#592929
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -148,6 +168,7 @@ noremap <Leader>w :%s/\s\+$//e
 
 " the_silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
@@ -199,6 +220,9 @@ nnoremap <leader>t :Tags<CR>
 
 " gitblame via https://redd.it/i50pce
 nmap <silent><Leader>G :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
