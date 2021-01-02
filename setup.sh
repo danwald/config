@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf gimp"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf gimp pyenv pyenv-virtualenv pyenv-virtualenvwrapper zlib readline xv"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
@@ -26,7 +26,7 @@ $PKGMGR install $PKGS > /dev/null
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
-mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin
+mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/.virtualenvs ~/sandbox
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
@@ -72,6 +72,40 @@ cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 echo "Overwritting .ssh/authorized_keys from danwald.me"
 mkdir -p ~/.ssh
 curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/
+
+
+echo "setup your pyenvs"
+read -p "Stable python version? " py3
+read -p "Stable python2 version? " py2
+echo "installing $py2"
+pyenv install $py2
+echo "installing $py3"
+pyenv install $py3
+
+echo "Creating python virtualenvs"
+pyenv virtualenv $py3 jupyter3
+pyenv virtualenv $py3 tools3
+pyenv virtualenv $py2 tools2
+
+echo "Installing jupyter3"
+pyenv activate jupyter3
+pip install jupyter
+python -m ipykernel install --user
+pyenv deactivate
+
+echo "Install tools2"
+pyenv activate tools2
+pip install ipykernel rename s3cmd fabric ipdb
+python -m ipykernel install --user
+pyenv deactivate
+
+echo "Install tools"
+pyenv activate tools3
+pip install youtube-dl gnucash-to-beancount rows flake8 isort ipython ipdb
+pyenv deactivate
+
+
+
 
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
