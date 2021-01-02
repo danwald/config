@@ -18,14 +18,11 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf gimp"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
 $PKGMGR install $PKGS > /dev/null
-
-echo "Install fzf"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf > /dev/null
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
