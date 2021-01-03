@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf gimp pyenv pyenv-virtualenv pyenv-virtualenvwrapper zlib readline xv"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf gimp pyenv pyenv-virtualenv pyenv-virtualenvwrapper zlib readline xv tmux keybase"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
