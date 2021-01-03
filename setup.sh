@@ -74,13 +74,9 @@ mkdir -p ~/.ssh
 curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/
 
 
-echo "setup your pyenvs"
+echo "setup your pyenvs via https://medium.com/welcome-to-the-django/guia-definitivo-para-organizar-meu-ambiente-python-a16e2479b753"
 read -p "Stable python version? " py3
-read -p "Stable python2 version? " py2
-echo "installing $py2"
-pyenv install $py2
 echo "installing $py3"
-pyenv install $py3
 
 echo "Creating python virtualenvs"
 pyenv virtualenv $py3 jupyter3
@@ -93,19 +89,13 @@ pip install jupyter
 python -m ipykernel install --user
 pyenv deactivate
 
-echo "Install tools2"
-pyenv activate tools2
-pip install ipykernel rename s3cmd fabric ipdb
-python -m ipykernel install --user
-pyenv deactivate
-
-echo "Install tools"
+echo "Installing tools"
 pyenv activate tools3
-pip install youtube-dl gnucash-to-beancount rows flake8 isort ipython ipdb
+pip install youtube-dl flake8 isort ipython ipdb magic-wormhole awscli
 pyenv deactivate
 
-
-
+echo "setting pyenv paths"
+pyenv global $py3 jupyter3 tools3
 
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
