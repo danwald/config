@@ -30,6 +30,7 @@ Plugin 'Shougo/deoplete.nvim'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'deoplete-plugins/deoplete-jedi'
+Plugin 'loremipsum'
 call vundle#end() " required
 
 " Plugin options
@@ -223,6 +224,9 @@ nmap <silent><Leader>G :call setbufvar(winbufnr(popup_atcursor(split(system("git
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+
+" count searches under cursor
+map ,* *<C-O>:%s///gn<CR>
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
