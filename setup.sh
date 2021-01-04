@@ -26,7 +26,7 @@ $PKGMGR install $PKGS > /dev/null
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
-mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/.virtualenvs ~/sandbox
+mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/.virtualenvs ~/sandbox ~/.ssh
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
@@ -40,6 +40,8 @@ echo "---exclude=@$HOME/.ctagsignore" >> .ctags
 ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.hammerspoon .
 ln -sfv $DIR/bin/sag.py ~/bin/sag
+ln -sfv $DIR/bin/sag.py ~/bin/sag
+cp -v $DIR/ssh_config ~/.ssh/config
 
 echo "Installing oh-my-zsh .. "
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
