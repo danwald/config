@@ -31,6 +31,7 @@ Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'deoplete-plugins/deoplete-jedi'
 Plugin 'loremipsum'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 call vundle#end() " required
 
 " Plugin options
@@ -170,6 +171,8 @@ noremap <Leader>w :%s/\s\+$//e
 " the_silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" markdown preview
+let vim_markdown_preview_github=1
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
