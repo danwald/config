@@ -83,17 +83,16 @@ echo "installing $py3"
 echo "Creating python virtualenvs"
 pyenv virtualenv $py3 jupyter3
 pyenv virtualenv $py3 tools3
-pyenv virtualenv $py2 tools2
 
 echo "Installing jupyter3"
 pyenv activate jupyter3
-pip install jupyter
-python -m ipykernel install --user
+pip install -U pip jupyter
+python -m ipykernel install
 pyenv deactivate
 
 echo "Installing tools"
 pyenv activate tools3
-pip install youtube-dl flake8 isort ipython ipdb magic-wormhole awscli
+pip install -U pip youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip
 pyenv deactivate
 
 echo "setting pyenv paths"
