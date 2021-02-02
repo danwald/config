@@ -213,7 +213,7 @@ map <leader>i :Isort<cr>
 command! -range=% Isort :<line1>,<line2>! isort -
 
 "fzf
-set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
 nnoremap <leader>h :History<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
