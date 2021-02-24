@@ -88,13 +88,13 @@ pyenv virtualenv $py3 tools3
 
 echo "Installing jupyter3"
 pyenv activate jupyter3
-pip install -U pip jupyter
+python -m pip install -U pip jupyter
 python -m ipykernel install
 pyenv deactivate
 
 echo "Installing tools"
 pyenv activate tools3
-pip install -U pip youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip
+python -m pip install -U pip youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip
 pyenv deactivate
 
 echo "setting pyenv paths"
