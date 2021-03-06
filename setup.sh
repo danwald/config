@@ -18,9 +18,10 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv\
-    pyenv-virtualenvwrapper zlib readline xv tmux keybase\
-    pyflakes rope mccabe pycodestyle pydocstyle autopep8 python-language-server"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv zlib readline xv tmux keybase"
+
+PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server\
+    youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
@@ -94,7 +95,7 @@ pyenv deactivate
 
 echo "Installing tools"
 pyenv activate tools3
-python -m pip install -U pip youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip
+pip install -U pip $PYPKGS
 pyenv deactivate
 
 echo "setting pyenv paths"
