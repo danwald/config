@@ -234,6 +234,9 @@ let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
 " Setting a value to a blank string leaves that command unmapped:
 let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
 
+" show preview window below
+g:lsc_preview_split_direction = v:below
+
 " ... or set only the commands you want mapped without defaults.
 " Complete default mappings are:
 let g:lsc_auto_map = {
