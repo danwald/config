@@ -10,7 +10,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export GOPATH="$HOME/sandbox/go"
 export GOBIN="$GOPATH/bin"
-export PATH=$HOME/bin:/usr/local/bin:$HOME/sandbox/git-utils:$PATH:$GOBIN/bin
+export PATH=$HOME/bin:$HOME/sandbox/git-utils:$PATH:$GOBIN/bin
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
