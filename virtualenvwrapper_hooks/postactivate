@@ -1,8 +1,0 @@
-# This hook is sourced after this virtualenv is activated.
-#
-
-# Set $ENV_DIR to where you keep all your environment variables for your environments as export statements one per line
-# when you `workon` an env this will add the envs to the shell
-
-ENV_FILE="${ENV_DIR}/$(basename $VIRTUAL_ENV)"
-[[ -e "$ENV_FILE" ]] && source $ENV_FILE && export ENV_FILE="$ENV_FILE" || unset ENV_FILE
