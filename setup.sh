@@ -33,6 +33,7 @@ mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
+ln -sfv $DIR/git_hooks git_hooks
 ln -sfv $DIR/.zshrc .zshrc
 ln -sfv $DIR/.aliases .aliases
 ln -sfv $DIR/.envs .envs

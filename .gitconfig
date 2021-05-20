@@ -3,7 +3,9 @@
 [core]
     editor = vim
     pager = less
+    # hardcoded for osx home
     excludesfile = /Users/danny.crasto/.gitignore
+    hooksPath = /Users/danny.crasto/git_hooks
 [color]
     ui = true
     diff = true
