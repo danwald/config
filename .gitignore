@@ -9,3 +9,4 @@ pw
 .flake8
 .isort.cfg
 pylintrc
+.pre-commit-config.yaml
