@@ -235,7 +235,7 @@ let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
 let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
 
 " show preview window below
-g:lsc_preview_split_direction = v:below
+"let g:lsc_preview_split_direction = {'v:below'}
 
 " ... or set only the commands you want mapped without defaults.
 " Complete default mappings are:
