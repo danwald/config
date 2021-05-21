@@ -11,10 +11,11 @@ Host dnb
     User     danwald
 
 Host *
-    ControlPath           ~/.ssh/%C.sock
+    ControlPath           ~/.ssh/%C.sock #do for specific hosts
     ControlMaster         auto
     ControlPersist        30m
     KeepAlive             yes
     ServerAliveInterval   60m
     StrictHostKeyChecking no
     TCPKeepAlive          yes
+    #LogLevel              DEBUG3
