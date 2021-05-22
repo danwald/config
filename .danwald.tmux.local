@@ -10,6 +10,7 @@ set -g @tpm_plugins '          \
   tmux-plugins/tmux-resurrect  \
   tmux-plugins/tmux-continuum  \
   thewtex/tmux-mem-cpu-load    \
+  danwald/kube-tmux            \
 '
 
 #Plugin settings
@@ -17,6 +18,6 @@ set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
 set -g @resurrect-strategy-vim 'session'
 
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in?format=2) #[fg=green,bg=black]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -g 5 -m 2 -q -i 2)#[default] #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , #{username}#{root}|#{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in?format=2) #[fg=green,bg=black]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -g 5 -m 2 -q -i 2)#[default] ($TMUX_PLUGIN_MANAGER_PATH/danwald/kube-tmux)#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , #{username}#{root}|#{hostname} '
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
