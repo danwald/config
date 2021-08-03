@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv zlib readline tmux keybase watch"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv zlib readline tmux keybase watch exa"
 
 PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server\
     youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
