@@ -17,5 +17,8 @@ source $ZSH/oh-my-zsh.sh
 
 fpath+=~/.zfunc
 
+
 unsetopt correct_all
 unsetopt share_history
+
+. /usr/local/etc/profile.d/z.sh
