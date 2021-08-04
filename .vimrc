@@ -174,6 +174,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " markdown preview
 let vim_markdown_preview_github=1
+let vim_markdown_preview_browser='Google Chrome'
 
 " Mappings to access buffers (don't use "\p" because a
 " delay before pressing "p" would accidentally paste).
@@ -256,7 +257,7 @@ let g:lsc_auto_map = {
 	\}
 
 " gitblame via https://redd.it/i50pce
-nmap <silent><Leader>G :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
+nmap <silent><Leader>B :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
