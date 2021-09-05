@@ -8,8 +8,8 @@
     -   id: detect-aws-credentials
     -   id: detect-private-key
     -   id: end-of-file-fixer
-- repo: local
-    hooks:
+-   repo: local
+    hooks :
     -   id: git-lint
         name: git-lint
         description: Executes linting on python files diff.
@@ -17,11 +17,7 @@
         additional_dependencies: [git-lint]
         language: python
         types: [python]
-- repo: local
+-   repo: https://github.com/psf/black
+    rev: 19.3b0
     hooks:
-    -   id: wily
-        name: wily
-        entry: wily diff
-        verbose: true
-        language: python
-        additional_dependencies: [wily]
+    -   id: black
