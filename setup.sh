@@ -21,7 +21,7 @@ esac
 PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv zlib readline tmux keybase watch exa z"
 
 PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server\
-    youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
+    youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip asdf"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
