@@ -1,5 +1,7 @@
+fail_fast: true
+repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: master
+    rev: v4.0.1
     hooks:
     -   id: trailing-whitespace
     -   id: check-json
@@ -8,16 +10,25 @@
     -   id: detect-aws-credentials
     -   id: detect-private-key
     -   id: end-of-file-fixer
--   repo: local
-    hooks :
-    -   id: git-lint
-        name: git-lint
-        description: Executes linting on python files diff.
-        entry: git lint
-        additional_dependencies: [git-lint]
-        language: python
-        types: [python]
 -   repo: https://github.com/psf/black
-    rev: 19.3b0
+    rev: 21.8b0
     hooks:
     -   id: black
+        args: [--diff, --check]
+-   repo: https://github.com/pycqa/isort
+    rev: 5.8.0
+    hooks:
+    -   id: isort
+        name: isort (python)
+    -   id: isort
+        name: isort (cython)
+        types: [cython]
+    -   id: isort
+        name: isort (pyi)
+        types: [pyi]
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.902
+    hooks:
+    -   id: mypy
+        exclude: ^tests/
+        args: [--strict]
