@@ -21,7 +21,7 @@ esac
 PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv zlib readline tmux keybase watch exa z"
 
 PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server\
-    youtube-dl flake8 isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip asdf"
+    youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip asdf"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
@@ -37,13 +37,13 @@ ln -sfv $DIR/.zshrc .zshrc
 ln -sfv $DIR/.aliases .aliases
 ln -sfv $DIR/.envs .envs
 ln -sfv $DIR/.ackrc .ackrc
-ln -sfv $DIR/flake8 ~/.config/flake8
 cp -v $DIR/.ctags .ctags
 echo "---exclude=@$HOME/.ctagsignore" >> .ctags
 ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.hammerspoon .
 ln -sfv $DIR/bin/sag.py ~/bin/sag
 ln -sfv $DIR/bin/sag.py ~/bin/sag
+ln -sfv $DIR/pyproject.toml pyproject.toml
 cp -v $DIR/ssh_config ~/.ssh/config
 
 echo "Installing oh-my-zsh .. "
