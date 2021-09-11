@@ -18,10 +18,9 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf pyenv pyenv-virtualenv zlib readline tmux keybase watch exa z"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa z asdf"
 
-PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server\
-    youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip asdf"
+PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip asdf"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
@@ -79,27 +78,22 @@ mkdir -p ~/.ssh
 curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/
 
 
-echo "setup your pyenvs via https://medium.com/welcome-to-the-django/guia-definitivo-para-organizar-meu-ambiente-python-a16e2479b753"
+echo "install asdf python/node"
 read -p "Stable python version? " py3
 echo "installing $py3"
 
-echo "Creating python virtualenvs"
-pyenv virtualenv $py3 jupyter3
-pyenv virtualenv $py3 tools3
+asdf plugin add nodejs
+asdf plugin add python
 
-echo "Installing jupyter3"
-pyenv activate jupyter3
-python -m pip install -U pip jupyter
-python -m ipykernel install
-pyenv deactivate
+asdf install nodejs latest
+asdf global nodejs latest
+asdf install python latest
+asdf install python $py3
+asdf global python $py3
+asdf list
+asdf current
 
-echo "Installing tools"
-pyenv activate tools3
 pip install -U pip $PYPKGS
-pyenv deactivate
-
-echo "setting pyenv paths"
-pyenv global $py3 jupyter3 tools3
 
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
