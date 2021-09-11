@@ -20,7 +20,7 @@ esac
 
 PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa z asdf"
 
-PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip asdf"
+PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip virtualenv virtualenvwrapper"
 
 echo "Updating your packages and install pre-requisites"
 $PKGMGR update > /dev/null
@@ -28,7 +28,7 @@ $PKGMGR install $PKGS > /dev/null
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
-mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/.virtualenvs ~/sandbox ~/.ssh
+mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/.virtualenvs ~/sandbox ~/.ssh ~/Envs
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore

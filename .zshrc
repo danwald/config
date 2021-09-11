@@ -25,3 +25,6 @@ unsetopt share_history
 . /usr/local/etc/profile.d/z.sh
 
 ulimit -n 524288 unlimited
+
+export WORKON_HOME=~/Envs
+source ~/.asdf/installs/python/3.8.12/bin/virtualenvwrapper.sh
