@@ -22,9 +22,10 @@ PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keyb
 
 PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip virtualenv virtualenvwrapper"
 
-echo "Updating your packages and install pre-requisites"
-$PKGMGR update > /dev/null
-$PKGMGR install $PKGS > /dev/null
+$LOG="/tmp/dsetup.log"
+echo "Updating your packages and install pre-requisites (logging to $LOG)"
+$PKGMGR update > $LOG
+$PKGMGR install $PKGS > $LOG
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
