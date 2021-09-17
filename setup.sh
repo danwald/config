@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa z asdf"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa asdf"
 
 PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip virtualenv virtualenvwrapper"
 
@@ -29,7 +29,7 @@ $PKGMGR install $PKGS > $LOG
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
-mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/.virtualenvs ~/sandbox ~/.ssh ~/Envs
+mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/sandbox ~/.ssh ~/Envs
 ln -sfv $DIR/.vimrc .vimrc
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
@@ -76,7 +76,7 @@ cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 
 echo "Overwritting .ssh/authorized_keys from danwald.me"
 mkdir -p ~/.ssh
-curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/
+curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
 
 
 echo "install asdf python/node"
@@ -96,8 +96,12 @@ asdf current
 
 pip install -U pip $PYPKGS
 
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
+pushd $HOME > /dev/null
+git clone https://github.com/rupa/z.git > /dev/null
+popd > /dev/null
+
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
+echo "You have to install pip install pynvim into vims compile python version in brew"
 echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
 echo 'vim +PluginInstall +qall'
 popd > /dev/null

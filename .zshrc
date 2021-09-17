@@ -22,7 +22,7 @@ fpath+=~/.zfunc
 unsetopt correct_all
 unsetopt share_history
 
-. /usr/local/etc/profile.d/z.sh
+. ~/z/z.sh
 
 ulimit -n 524288 unlimited
 
