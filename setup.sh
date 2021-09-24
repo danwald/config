@@ -85,7 +85,10 @@ echo "installing $py3"
 
 asdf plugin add nodejs
 asdf plugin add python
+asdf plugin add golang
 
+asdf install golang latest
+asdf global golang latest
 asdf install nodejs latest
 asdf global nodejs latest
 asdf install python latest
