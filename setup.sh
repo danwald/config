@@ -104,7 +104,7 @@ git clone https://github.com/rupa/z.git > /dev/null
 popd > /dev/null
 
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
-echo "You have to install pip install pynvim into vims compile python version in brew"
+echo "You have to `pip install pynvim pyls` into vim's compiled python version in brew"
 echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
 echo 'vim +PluginInstall +qall'
 popd > /dev/null
