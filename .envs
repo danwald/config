@@ -18,3 +18,4 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export WORKON_HOME=~/Envs
 
 [ -f ~/.envs_secret ] && source ~/.envs_secret
+[ -f ~/.envs_local ] && source ~/.envs_local

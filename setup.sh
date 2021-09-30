@@ -83,8 +83,9 @@ curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
 
 
 echo "install asdf python/node"
-read -p "Stable python version? " py3
-echo "installing $py3"
+read -p "Stable python version? " STABLE_PY3
+echo "installing $STABLE_PY3"
+echo "export STABLE_PY3=$STABLE_PY3" >> ~/.envs_local
 
 asdf plugin add nodejs
 asdf plugin add python
@@ -95,8 +96,8 @@ asdf global golang latest
 asdf install nodejs latest
 asdf global nodejs latest
 asdf install python latest
-asdf install python $py3
-asdf global python $py3
+asdf install python $STABLE_PY3
+asdf global python $STABLE_PY3
 asdf list
 asdf current
 
