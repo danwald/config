@@ -1,14 +1,28 @@
-export ZSH=$HOME/.oh-my-zsh
+source ~/antigen.zsh
 
-ZSH_THEME="bira"
-CASE_SENSITIVE="true"
-ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="false"
-plugins=(git gitfast danwald fzf asdf)
-#loading locals prior src omz to update local plugins
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-source $ZSH/oh-my-zsh.sh
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle gitfast
+antigen bundle fzf
+antigen bundle asdf
+
+# Syntax highlighting/suggestions/completions bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+# local plugin
+antigen bundle danwald
+
+# Load the theme.
+antigen theme bira
+
+# Tell Antigen that you're done.
+antigen apply
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.envs ] && source ~/.envs
@@ -17,7 +31,6 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.zshrc_dbz ] && source ~/.zshrc_dbz
 
 fpath+=~/.zfunc
-
 
 unsetopt correct_all
 unsetopt share_history
