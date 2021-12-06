@@ -29,6 +29,7 @@ antigen apply
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.zshrc_dbz ] && source ~/.zshrc_dbz
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 fpath+=~/.zfunc
 
