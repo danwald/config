@@ -101,6 +101,15 @@ asdf global python $STABLE_PY3
 asdf list
 asdf current
 
+echo "installing python bins with pipx"
+python -m pip install -U pip pipx
+asdf reshim python $STABLE_PY3
+for pkg in $PYPKGS
+do
+pipx install $pkg
+done
+
+/Users/dannycrasto/.local/bin
 pip install -U pip $PYPKGS
 
 pushd $HOME > /dev/null
