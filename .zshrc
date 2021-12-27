@@ -39,5 +39,3 @@ unsetopt share_history
 . ~/z/z.sh
 
 ulimit -n 524288 unlimited
-
-source ~/.asdf/installs/python/$STABLE_PY3/bin/virtualenvwrapper.sh

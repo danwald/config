@@ -20,7 +20,7 @@ esac
 
 PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa asdf"
 
-PYPKGS="pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip virtualenv virtualenvwrapper"
+PYPKGS="poetry pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
 
 $LOG="/tmp/dsetup.log"
 echo "Updating your packages and install pre-requisites (logging to $LOG)"
