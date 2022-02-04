@@ -18,7 +18,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa asdf"
+PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa"
 
 PYPKGS="poetry pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
 
@@ -82,6 +82,10 @@ mkdir -p ~/.ssh
 curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
 
 
+echo "Downloading asdf"
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+
+
 echo "install asdf python/node"
 read -p "Stable python version? " STABLE_PY3
 echo "installing $STABLE_PY3"
@@ -108,9 +112,6 @@ for pkg in $PYPKGS
 do
 pipx install $pkg
 done
-
-/Users/dannycrasto/.local/bin
-pip install -U pip $PYPKGS
 
 pushd $HOME > /dev/null
 git clone https://github.com/rupa/z.git > /dev/null
