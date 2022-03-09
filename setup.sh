@@ -3,8 +3,7 @@ cleanup()
 {
     echo "Error detected. Cleaning up"
     rm -rf ~/.tmux ~/.tmux/plugins/tpm ~/.oh-my-zsh ~/.vim/bundle/Vundle.vim\
-            $HOME/.tmux.conf.local\ $HOME/.tmux/.tmux.conf\
-         ~/.vim/plugins/google_python_style.vim ~/.fzf
+            $HOME/.tmux.conf.local $HOME/.tmux/.tmux.conf ~/.fzf
     exit 1;
 }
 
@@ -59,11 +58,6 @@ chsh -s `which zsh` $USER
 
 echo "Installing vundle for your vim's plugin needs .."
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /dev/null
-
-echo "Installing google's python indent plugin"
-pushd $HOME/.vim/plugins > /dev/null
-curl -Os https://github.com/google/styleguide/blob/gh-pages/google_python_style.vim
-popd > /dev/null
 
 echo "Installing gpakosz's .tmux .."
 pushd $HOME > /dev/null
