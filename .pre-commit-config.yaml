@@ -10,24 +10,18 @@ repos:
     -   id: detect-aws-credentials
     -   id: detect-private-key
     -   id: end-of-file-fixer
--   repo: https://github.com/psf/black
-    rev: 21.8b0
-    hooks:
-    -   id: black
--   repo: https://github.com/pycqa/isort
-    rev: 5.8.0
-    hooks:
-    -   id: isort
-        name: isort (python)
-    -   id: isort
-        name: isort (cython)
-        types: [cython]
-    -   id: isort
-        name: isort (pyi)
-        types: [pyi]
 -   repo: https://github.com/pre-commit/mirrors-mypy
     rev: v0.902
     hooks:
     -   id: mypy
         exclude: ^tests/
         args: [--strict]
+-   repo: https://github.com/psf/black
+    rev: 22.1.0
+    hooks:
+    -   id: black
+-   repo: https://github.com/pycqa/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--filter-files"]
