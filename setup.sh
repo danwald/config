@@ -19,7 +19,8 @@ esac
 
 PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa jo jq"
 
-PYPKGS="poetry pyflakes pylint rope mccabe pycodestyle pydocstyle autopep8 python-language-server youtube-dl isort ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
+PYPKGS="'python-language-server[all]' youtube-dl ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip"
+PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip"
 
 $LOG="/tmp/dsetup.log"
 echo "Updating your packages and install pre-requisites (logging to $LOG)"
@@ -99,10 +100,11 @@ asdf global python $STABLE_PY3
 asdf list
 asdf current
 
-echo "installing python bins with pipx"
-python -m pip install -U pip pipx
+echo "installing python libs to global"
+python -m pip install -U pip pipx $PYPKGS
 asdf reshim python $STABLE_PY3
-for pkg in $PYPKGS
+echo "installing python bins with pipx"
+for pkg in $PYPKG_BINS
 do
 pipx install $pkg
 done
