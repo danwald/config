@@ -49,6 +49,8 @@ highlight link Flake8_Complexity WarningMsg
 highlight link Flake8_Naming     WarningMsg
 highlight link Flake8_PyFlake    WarningMsg
 autocmd FileType python map <buffer> <Leader>F :call Flake8()<CR>
+
+
 " taglist
 let g:Tlist_File_Fold_Auto_Close=1
 let g:Tlist_Auto_Update=1
@@ -264,6 +266,7 @@ let g:deoplete#enable_at_startup = 1
 
 " count searches under cursor
 map ,* *<C-O>:%s///gn<CR>
+autocmd FileType yaml setlocal ai et cuc sw=2 ts=2
 
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
