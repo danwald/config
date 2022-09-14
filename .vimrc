@@ -4,8 +4,6 @@ set nocompatible              " be iMproved, required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -202,6 +200,7 @@ nnoremap <Leader>0 :10b<CR>
 set clipboard=unnamed
 vmap <C-x> :!pbcopy<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
+nmap <C-c> :%y+<CR>
 
 "toggle spelling
 nmap <Leader>S :setlocal spell! spelllang=en_us<CR>
