@@ -31,6 +31,7 @@ Plugin 'deoplete-plugins/deoplete-jedi'
 Plugin 'loremipsum'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'natebosch/vim-lsc'
+Plugin 'mtth/scratch.vim'
 call vundle#end() " required
 
 " Plugin options
@@ -140,6 +141,10 @@ let g:ale_linters = {
  \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
+
+" Scratch
+let g:scratch_persistence_file = '~/.scratch.vim'
+let g:scratch_autohide = 1
 
 "flag unnecessary whitespace
 highlight BadWhitespace ctermbg=red ctermfg=white guibg=#592929
