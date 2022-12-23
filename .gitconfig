@@ -33,6 +33,7 @@
     dunk = !git diff | dunk
 [merge]
     tool = meld
+	autoStash = true
 [rerere]
     enable = 1
 	autoupdate = 1
@@ -44,9 +45,12 @@
 	helper = cache --timeout=3600
 [push]
 	default = simple
+	autoSetupRemote = true
 [pull]
     rebase = true
 [oh-my-zsh]
 	hide-dirty = 1
 [init]
 	defaultBranch = main
+[rebase]
+	autoStash = true
