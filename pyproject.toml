@@ -7,11 +7,6 @@ line-length = 120
 target-version = ['py36', 'py37', 'py38', 'py39', 'py310']
 skip-string-normalization = true
 
-[tool.flake8]
-ignore = ['E501', 'W293']
-max-line-length = 120
-exclude = 'tests/*'
-max-complexity = 10
 
 [tool.mypy]
 ignore_missing_imports = true
@@ -64,3 +59,10 @@ not_skip = '__init__.py'
 
 [tool.coverage.run]
 branch = true
+
+# have put this in setup.cfg/tox.ini
+#[tool.flake8]
+#ignore = ['E501', 'W293']
+#max-line-length = 120
+#exclude = 'tests/*'
+#max-complexity = 10
