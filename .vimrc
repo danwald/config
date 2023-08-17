@@ -1,38 +1,42 @@
 "Created by Danny S. Crasto
 set nocompatible              " be iMproved, required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set the runtime path to include plug and initialize
+call plug#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Bundle 'wakatime/vim-wakatime'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'nvie/vim-flake8'
-Bundle 'gregsexton/gitv'
-Bundle 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf.vim'
-Plugin 'gryf/pylint-vim.git'
-Plugin 'ludovicchabant/vim-gutentags.git'
-Plugin 'fatih/vim-go.git'
-Plugin 'tpope/vim-obsession'
-Plugin 'morhetz/gruvbox'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'raimon49/requirements.txt.vim'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'dense-analysis/ale'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'deoplete-plugins/deoplete-jedi'
-Plugin 'loremipsum'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'natebosch/vim-lsc'
-Plugin 'mtth/scratch.vim'
-call vundle#end() " required
+Plug 'wakatime/vim-wakatime'
+Plug 'vim-scripts/taglist.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'nvie/vim-flake8'
+Plug 'gregsexton/gitv'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf.vim'
+Plug 'gryf/pylint-vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-obsession'
+Plug 'morhetz/gruvbox'
+Plug 'vim-syntastic/syntastic'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'raimon49/requirements.txt.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'dense-analysis/ale'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'JamshedVesuna/vim-markdown-preview'
+"Plug 'natebosch/vim-lsc'
+Plug 'mtth/scratch.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-jedi'
+"Plug 'tbodt/deoplete-tabnine'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+Plug 'feline-nvim/feline.nvim'
+Plug 'tpope/vim-unimpaired'
+"Plug 'kabouzeid/nvim-lspinstall'
+call plug#end() " required
 
 " Plugin options
 " flake
@@ -106,8 +110,7 @@ colorscheme gruvbox
 set background=dark
 
 "using Source Code Pro
-set anti enc=utf-8
-set guifont=Source\ Code\ Pro\ 11
+let guifont="Source Code Pro 11"
 
 "search backwards from pwd-root for tag files
 :set tags=./tags;
@@ -230,38 +233,39 @@ nnoremap <leader>c :Commits<CR>
 nnoremap <leader>s :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
-"lsc
-let g:lsc_server_commands = {'python': 'pyls'}
-" Use all the defaults (recommended):
-let g:lsc_auto_map = v:true
-
-" Apply the defaults with a few overrides:
-let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
-
-" Setting a value to a blank string leaves that command unmapped:
-let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
-
-" disable omnicompelte  preview
-set completeopt-=preview
-autocmd CompleteDone * silent! pclose
-
-" ... or set only the commands you want mapped without defaults.
-" Complete default mappings are:
-let g:lsc_auto_map = {
-    \ 'GoToDefinition': '<C-]>',
-    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-    \ 'FindReferences': 'gr',
-    \ 'NextReference': '<C-n>',
-    \ 'PreviousReference': '<C-p>',
-    \ 'FindImplementations': 'gI',
-    \ 'FindCodeActions': 'ga',
-    \ 'Rename': 'gR',
-    \ 'ShowHover': v:true,
-    \ 'DocumentSymbol': 'go',
-    \ 'WorkspaceSymbol': 'gS',
-    \ 'SignatureHelp': 'gm',
-    \ 'Completion': 'completefunc',
-	\}
+""lsc
+"let g:lsc_server_commands = {'python': 'pyls'}
+"" Use all the defaults (recommended):
+"let g:lsc_auto_map = v:true
+"
+"" Apply the defaults with a few overrides:
+"let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
+"
+"" Setting a value to a blank string leaves that command unmapped:
+"let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
+"
+"" disable omnicompelte  preview
+"set completeopt-=preview
+"autocmd CompleteDone * silent! pclose
+"
+"" ... or set only the commands you want mapped without defaults.
+"" Complete default mappings are:
+"let g:lsc_auto_map = {
+"    \ 'GoToDefinition': '<C-]>',
+"    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+"    \ 'FindReferences': 'gr',
+"    \ 'NextReference': '<C-n>',
+"    \ 'PreviousReference': '<C-p>',
+"    \ 'FindImplementations': 'gI',
+"    \ 'FindCodeActions': 'ga',
+"    \ 'Rename': 'gR',
+"    \ 'ShowHover': v:true,
+"    \ 'DocumentSymbol': 'go',
+"    \ 'WorkspaceSymbol': 'gS',
+"    \ 'SignatureHelp': 'gm',
+"    \ 'Completion': 'completefunc',
+"	\}
+"
 
 " gitblame via https://redd.it/i50pce
 nmap <silent><Leader>B :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
@@ -273,6 +277,83 @@ let g:deoplete#enable_at_startup = 1
 map ,* *<C-O>:%s///gn<CR>
 autocmd FileType yaml setlocal ai et cuc sw=2 ts=2
 
+let g:python3_host_prog = '/Users/dannycrasto/.asdf/shims/python'
+"call deoplete#custom#var('tabnine', {'line_limit': 500, 'max_num_results': 20,})
+"
+lua << EOF
+vim.g.editorconfig = false
+--vim.opt.termguicolors = true
+--require('feline').setup()
+--require('feline').winbar.setup()
+
+require("mason").setup()
+-- Setup language servers.
+local lspconfig = require('lspconfig')
+lspconfig.bashls.setup {}
+lspconfig.cssls.setup {}
+lspconfig.docker_compose_language_service.setup {}
+lspconfig.dockerls.setup {}
+lspconfig.pyright.setup {}
+lspconfig.tsserver.setup {}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+}
+lspconfig.yamlls.setup {}
+
+
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+-- Use LspAttach autocommand to only map the following keys
+-- after the language server attaches to the current buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+  end,
+})
+require('tabnine').setup({
+  disable_auto_comment=true,
+  accept_keymap="<Tab>",
+  dismiss_keymap = "<C-]>",
+  debounce_ms = 800,
+  suggestion_color = {gui = "#808080", cterm = 244},
+  exclude_filetypes = {"TelescopePrompt"},
+  log_file_path = nil, -- absolute path to Tabnine log file
+})
+
+EOF
+
+set mouse=
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
 set statusline+=%{gutentags#statusline()}
 set laststatus=2

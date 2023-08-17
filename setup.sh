@@ -17,7 +17,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git vim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa jo jq gimp hugin"
+PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa jo jq gimp hugin"
 
 PYPKGS="'python-language-server[all]' youtube-dl ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip dunk"
 PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip"
@@ -29,8 +29,9 @@ $PKGMGR install $PKGS > $LOG
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
-mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/sandbox ~/.ssh ~/Envs
+mkdir -p ~/.vim/plugins ~/.vim/colors ~/.vim/autoload ~/.vim/bundle ~/.config ~/bin ~/sandbox ~/.ssh ~/Envs ~/.config/nvim/
 ln -sfv $DIR/.vimrc .vimrc
+ln -sfv $DIR/init.vim ~/.config/nvim/init.vim
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
 ln -sfv $DIR/.zshrc .zshrc
@@ -113,8 +114,13 @@ pushd $HOME > /dev/null
 git clone https://github.com/rupa/z.git > /dev/null
 popd > /dev/null
 
+echo "installing plug nvim plugin manager and all plugins"
+pushd $HOME > /dev/null
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+nvim +PlugInstall +qall
+popd > /dev/null
+
+
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
-echo "You have to `pip install pynvim 'python-language-server[all]'` into vim's compiled python version in brew"
-echo "Oh and run the command below to install your vim plugins .. or do a ':PluginInstall' in vim"
-echo 'vim +PluginInstall +qall'
 popd > /dev/null

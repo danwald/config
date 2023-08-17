@@ -1,7 +1,8 @@
 [user]
-	name = danny crasto
+	name = dcrasto
+	email = danwald79@gmail.com
 [core]
-    editor = vim
+    editor = nvim
     pager = less
     # hardcoded $HOME
     excludesfile = /Users/danny/.gitignore

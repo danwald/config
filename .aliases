@@ -20,3 +20,6 @@ alias ls='exa --sort modified'
 alias pip='python -mpip'
 
 alias dy="dig +noall +answer +additional $argv[1] @dns.toys"
+
+alias vi=nvim
+alias vim=nvim
