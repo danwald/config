@@ -79,7 +79,7 @@ curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
 
 
 echo "Downloading asdf"
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
 
 
 echo "install asdf python/node"
