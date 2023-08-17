@@ -42,7 +42,7 @@ echo "---exclude=@$HOME/.ctagsignore" >> .ctags
 ln -sfv $DIR/.ctagsignore .ctagsignore
 ln -sfv $DIR/.hammerspoon .
 ln -sfv $DIR/bin/sag.py ~/bin/sag
-ln -sfv $DIR/bin/sag.py ~/bin/sag
+ln -sfv $DIR/bin/time_ms ~/bin/time_ms
 ln -sfv $DIR/pyproject.toml pyproject.toml
 cp -v $DIR/ssh_config ~/.ssh/config
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+ts=$(gdate +%s%N)
+$@
+echo $((($(gdate +%s%N) - $ts)/1000000))
