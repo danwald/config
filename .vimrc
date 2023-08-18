@@ -277,7 +277,7 @@ let g:deoplete#enable_at_startup = 1
 map ,* *<C-O>:%s///gn<CR>
 autocmd FileType yaml setlocal ai et cuc sw=2 ts=2
 
-let g:python3_host_prog = '/Users/dannycrasto/.asdf/shims/python'
+let g:python3_host_prog = "$HOME/.asdf/shims/python"
 "call deoplete#custom#var('tabnine', {'line_limit': 500, 'max_num_results': 20,})
 "
 lua << EOF

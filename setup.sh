@@ -19,8 +19,8 @@ esac
 
 PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa jo jq gimp hugin"
 
-PYPKGS="'python-language-server[all]' youtube-dl ipython ipdb magic-wormhole awscli twine setuptools wheel pre-commit grip dunk"
-PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip"
+PYPKGS="pynvim ipython ipdb setuptools wheel"
+PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit"
 
 $LOG="/tmp/dsetup.log"
 echo "Updating your packages and install pre-requisites (logging to $LOG)"
