@@ -4,38 +4,36 @@ set nocompatible              " be iMproved, required
 " set the runtime path to include plug and initialize
 call plug#begin()
 
-Plug 'wakatime/vim-wakatime'
-Plug 'vim-scripts/taglist.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'nvie/vim-flake8'
-Plug 'gregsexton/gitv'
-Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf.vim'
-Plug 'gryf/pylint-vim'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'fatih/vim-go'
-Plug 'tpope/vim-obsession'
-Plug 'morhetz/gruvbox'
-Plug 'vim-syntastic/syntastic'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'raimon49/requirements.txt.vim'
-Plug 'tmhedberg/SimpylFold'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'Shougo/deoplete.nvim'
+Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 Plug 'dense-analysis/ale'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'fatih/vim-go'
+Plug 'feline-nvim/feline.nvim'
+Plug 'gregsexton/gitv'
+Plug 'gryf/pylint-vim'
+Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'morhetz/gruvbox'
+Plug 'mtth/scratch.vim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvie/vim-flake8'
+Plug 'raimon49/requirements.txt.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'JamshedVesuna/vim-markdown-preview'
-"Plug 'natebosch/vim-lsc'
-Plug 'mtth/scratch.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'deoplete-plugins/deoplete-jedi'
-"Plug 'tbodt/deoplete-tabnine'
-Plug 'neovim/nvim-lspconfig'
+Plug 'scrooloose/nerdtree'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'wakatime/vim-wakatime'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
-Plug 'feline-nvim/feline.nvim'
-Plug 'tpope/vim-unimpaired'
-"Plug 'kabouzeid/nvim-lspinstall'
 call plug#end() " required
 
 " Plugin options
@@ -233,39 +231,6 @@ nnoremap <leader>c :Commits<CR>
 nnoremap <leader>s :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
-""lsc
-"let g:lsc_server_commands = {'python': 'pyls'}
-"" Use all the defaults (recommended):
-"let g:lsc_auto_map = v:true
-"
-"" Apply the defaults with a few overrides:
-"let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
-"
-"" Setting a value to a blank string leaves that command unmapped:
-"let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
-"
-"" disable omnicompelte  preview
-"set completeopt-=preview
-"autocmd CompleteDone * silent! pclose
-"
-"" ... or set only the commands you want mapped without defaults.
-"" Complete default mappings are:
-"let g:lsc_auto_map = {
-"    \ 'GoToDefinition': '<C-]>',
-"    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-"    \ 'FindReferences': 'gr',
-"    \ 'NextReference': '<C-n>',
-"    \ 'PreviousReference': '<C-p>',
-"    \ 'FindImplementations': 'gI',
-"    \ 'FindCodeActions': 'ga',
-"    \ 'Rename': 'gR',
-"    \ 'ShowHover': v:true,
-"    \ 'DocumentSymbol': 'go',
-"    \ 'WorkspaceSymbol': 'gS',
-"    \ 'SignatureHelp': 'gm',
-"    \ 'Completion': 'completefunc',
-"	\}
-"
 
 " gitblame via https://redd.it/i50pce
 nmap <silent><Leader>B :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
@@ -278,8 +243,6 @@ map ,* *<C-O>:%s///gn<CR>
 autocmd FileType yaml setlocal ai et cuc sw=2 ts=2
 
 let g:python3_host_prog = "$HOME/.asdf/shims/python"
-"call deoplete#custom#var('tabnine', {'line_limit': 500, 'max_num_results': 20,})
-"
 lua << EOF
 vim.g.editorconfig = false
 --vim.opt.termguicolors = true
