@@ -34,7 +34,8 @@
     dunk = !git diff | dunk
 [merge]
     tool = meld
-	autoStash = true
+    autoStash = true
+    ff = no
 [rerere]
     enable = 1
 	autoupdate = 1
