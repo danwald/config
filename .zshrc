@@ -39,3 +39,7 @@ unsetopt share_history
 . ~/z/z.sh
 
 ulimit -n 524288 unlimited
+
+
+autoload -Uz compinit
+compinit
