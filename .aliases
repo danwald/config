@@ -23,3 +23,6 @@ alias dy="dig +noall +answer +additional $argv[1] @dns.toys"
 
 alias vi=nvim
 alias vim=nvim
+
+alias mkvenv='python -mvenv .venv --prompt .'
+alias venv='. ./.venv/bin/activate'
