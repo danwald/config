@@ -64,7 +64,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " gutentags
 "let g:gutentags_define_advanced_commands=1
 "let g:gutentags_trace=1
-let g:gutentags_ctags_executable='/usr/local/bin/ctags'
+let g:gutentags_ctags_executable='/opt/homebrew/bin/ctags'
 "[src, https://robertbasic.com/tags/gutentags/]
 let g:gutentags_cache_dir = '~/.vim/gutentags'
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.js', '*.json', '*.xml',
@@ -107,8 +107,8 @@ set t_Co=256
 colorscheme gruvbox
 set background=dark
 
-"using Source Code Pro
-let guifont="Source Code Pro 11"
+"using Monoid https://larsenwork.com/monoid/
+let guifont="Monoid Retina 9"
 
 "search backwards from pwd-root for tag files
 :set tags=./tags;
