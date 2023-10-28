@@ -19,3 +19,4 @@ export WORKON_HOME=~/Envs
 
 [ -f ~/.envs_secret ] && source ~/.envs_secret
 [ -f ~/.envs_local ] && source ~/.envs_local
+[ -f ~/.envs_temp ] && source ~/.envs_temp
