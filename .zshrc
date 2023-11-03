@@ -27,7 +27,6 @@ antigen apply
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.envs ] && source ~/.envs
 [ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.zshrc_dbz ] && source ~/.zshrc_dbz
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
