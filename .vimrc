@@ -34,6 +34,11 @@ Plug 'vim-syntastic/syntastic'
 Plug 'wakatime/vim-wakatime'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+Plug 'jackMort/ChatGPT.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end() " required
 
 " Plugin options
@@ -313,6 +318,8 @@ require('tabnine').setup({
   exclude_filetypes = {"TelescopePrompt"},
   log_file_path = nil, -- absolute path to Tabnine log file
 })
+
+require("chatgpt").setup()
 
 EOF
 
