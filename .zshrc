@@ -24,11 +24,10 @@ antigen theme bira
 antigen apply
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.envs ] && source ~/.envs
-[ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.zshrc_dbz ] && source ~/.zshrc_dbz
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
+for fp in ~/.fzf.zsh ~/.envs ~/.aliases ~/.zshrc_dbz ~/.zshrc_local
+do
+    [ -f $fp ] && source $fp #  && echo "loaded $fp"
+done
 
 fpath+=~/.zfunc
 
