@@ -61,8 +61,8 @@ not_skip = '__init__.py'
 branch = true
 
 # have put this in setup.cfg/tox.ini
-#[tool.flake8]
-#ignore = ['E501', 'W293']
-#max-line-length = 120
-#exclude = 'tests/*'
-#max-complexity = 10
+[tool.flake8]
+ignore = ['E501', 'W293']
+max-line-length = 120
+exclude = 'tests/*'
+max-complexity = 10
