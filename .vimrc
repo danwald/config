@@ -222,10 +222,6 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-"iSort
-map <leader>i :Isort<cr>
-command! -range=% Isort :<line1>,<line2>! isort -
-
 "fzf
 set rtp+=$HOMEBREW_PREFIX/opt/fzf
 nnoremap <leader>h :History<CR>
@@ -322,6 +318,9 @@ require('tabnine').setup({
 require("chatgpt").setup()
 
 EOF
+
+" chatgpt
+nnoremap <Leader>C :ChatGPT<CR>
 
 set mouse=
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
