@@ -3,7 +3,7 @@
 	email = danwald79@gmail.com
 [core]
     editor = nvim
-    pager = less
+    pager = less -FX
     # hardcoded $HOME
     excludesfile = /Users/danny/.gitignore
 [color]
@@ -31,7 +31,7 @@
     #force-tag-update-push = "!f() { git tag -fam '${1}' ${1} && git push -f origin ${1}; };f "
     squash-to = "!f() { git reset --hard ${1} && git merge --squash HEAD@{1};};f "
     flake8 = "!git diff HEAD^ | flake8 --diff"
-    dunk = !git diff | dunk
+    dunk = !git diff | dunk | less
 [merge]
     tool = meld
     autoStash = true
