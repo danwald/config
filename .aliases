@@ -2,7 +2,7 @@ alias cd='pushd > /dev/null'
 alias pd='popd > /dev/null'
 alias ds='dirs -pv'
 alias git_mod="git status | grep modified | awk '{print \$2}'"
-alias gdanwald="git config --local user.email danwald79@gmail.com"
+alias gdanwald="git config --local user.email danwald79@gmail.com && git config --local user.name danwald"
 alias dps='docker ps'
 alias dim='docker images'
 #https://www.calazan.com/docker-cleanup-commands/
