@@ -15,7 +15,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 
 # local plugin
-antigen bundle danwald
+antigen bundle danwald/omz-utils@main
 
 # Load the theme.
 antigen theme bira

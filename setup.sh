@@ -49,8 +49,6 @@ cp -v $DIR/ssh_config ~/.ssh/config
 
 echo "Installing oh-my-zsh .. "
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
-mkdir ~/.oh-my-zsh/custom/plugins/danwald/
-ln -sfv $DIR/danwald.plugin.zsh ~/.oh-my-zsh/custom/plugins/danwald/danwald.plugin.zsh
 
 echo "Insatalling antigen .. "
 curl -Ls git.io/antigen > ~/antigen.zsh
