@@ -56,9 +56,6 @@ curl -Ls git.io/antigen > ~/antigen.zsh
 echo "Changing your shell to zsh .."
 chsh -s `which zsh` $USER
 
-echo "Installing vundle for your vim's plugin needs .."
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim > /dev/null
-
 echo "Installing gpakosz's .tmux .."
 pushd $HOME > /dev/null
 git clone https://github.com/gpakosz/.tmux.git > /dev/null
