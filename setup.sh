@@ -105,6 +105,10 @@ do
 pipx install $pkg
 done
 
+echo "no global pip installs allowed!"
+pip config set global.require-virtualenv True
+
+
 pushd $HOME > /dev/null
 git clone https://github.com/rupa/z.git > /dev/null
 popd > /dev/null
