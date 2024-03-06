@@ -1,11 +1,10 @@
 [user]
 	name = dcrasto
-	email = danwald79@gmail.com
+	email = danny@dubizzle.com
 [core]
     editor = nvim
-    pager = less -FX
-    # hardcoded $HOME
-    excludesfile = /Users/danny/.gitignore
+    pager = delta
+    excludesfile = ~/.gitignore
 [color]
     ui = true
     diff = true
@@ -33,9 +32,9 @@
     flake8 = "!git diff HEAD^ | flake8 --diff"
     dunk = !git diff | dunk | less
 [merge]
-    tool = meld
     autoStash = true
     ff = no
+    conflictstyle = diff3
 [rerere]
     enable = 1
 	autoupdate = 1
@@ -56,3 +55,17 @@
 	defaultBranch = main
 [rebase]
 	autoStash = true
+[maintenance]
+	repo = /Users/dannysylvestercrasto/sandbox/dubizzle
+	repo = /Users/dannysylvestercrasto/sandbox/helmfiles-apps
+[branch]
+    sort = -committerdate
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[diff]
+    colorMoved = default
+[commit]
+	verbose = true

@@ -17,9 +17,9 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa jo jq gimp hugin pandoc"
+PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch exa jo jq gimp hugin pandoc git-delta"
 
-PYPKGS="pynvim ipython ipdb setuptools wheel"
+PYPKGS="pynvim ipython ipdb setuptools wheel pipx"
 PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit"
 
 $LOG="/tmp/dsetup.log"
@@ -97,7 +97,7 @@ asdf list
 asdf current
 
 echo "installing python libs to global"
-python -m pip install -U pip pipx $PYPKGS
+python -m pip install -U pip $PYPKGS
 asdf reshim python $STABLE_PY3
 echo "installing python bins with pipx"
 for pkg in $PYPKG_BINS
