@@ -30,14 +30,15 @@
     #force-tag-update-push = "!f() { git tag -fam '${1}' ${1} && git push -f origin ${1}; };f "
     squash-to = "!f() { git reset --hard ${1} && git merge --squash HEAD@{1};};f "
     flake8 = "!git diff HEAD^ | flake8 --diff"
-    dunk = !git diff | dunk | less
+    dk = !git diff | dunk | less
 [merge]
     autoStash = true
     ff = no
-    conflictstyle = diff3
+	conflictStyle = zdiff3
+	tool = difftastic
 [rerere]
-    enable = 1
-	autoupdate = 1
+    enabled = true
+	autoupdate = true
 [help]
     autocorrect = -1
 [gui]
@@ -55,6 +56,7 @@
 	defaultBranch = main
 [rebase]
 	autoStash = true
+	updateRefs = true
 [maintenance]
 	repo = /Users/dannysylvestercrasto/sandbox/dubizzle
 	repo = /Users/dannysylvestercrasto/sandbox/helmfiles-apps
@@ -67,5 +69,8 @@
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [diff]
     colorMoved = default
+	algorithm = histogram
 [commit]
 	verbose = true
+[log]
+	date = iso
