@@ -38,6 +38,7 @@ Plug 'jackMort/ChatGPT.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'rhysd/git-messenger.vim'
 
 call plug#end() " required
 
@@ -232,9 +233,6 @@ nnoremap <leader>c :Commits<CR>
 nnoremap <leader>s :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
-
-" gitblame via https://redd.it/i50pce
-nmap <silent><Leader>B :call setbufvar(winbufnr(popup_atcursor(split(system("git log -n 1 -L " . line(".") . ",+1:" . expand("%:p")), "\n"), { "padding": [1,1,1,1], "pos": "botleft", "wrap": 0 })), "&filetype", "git")<CR>
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
