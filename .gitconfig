@@ -1,6 +1,6 @@
 [user]
-	name = dcrasto
-	email = danny@dubizzle.com
+    name = dcrasto
+    email = danny@dubizzle.com
 [core]
     editor = nvim
     pager = delta
@@ -35,31 +35,31 @@
     autoStash = true
     ff = no
 	conflictStyle = zdiff3
-	tool = difftastic
+    tool = nvimdiff
 [rerere]
     enabled = true
-	autoupdate = true
+    autoupdate = true
 [help]
     autocorrect = -1
 [gui]
     spellingdictionary = none
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [push]
-	default = simple
-	autoSetupRemote = true
+    default = simple
+    autoSetupRemote = true
 [pull]
     rebase = true
 [oh-my-zsh]
-	hide-dirty = 1
+    hide-dirty = 1
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [rebase]
-	autoStash = true
-	updateRefs = true
+    autoStash = true
+    updateRefs = true
 [maintenance]
-	repo = /Users/dannysylvestercrasto/sandbox/dubizzle
-	repo = /Users/dannysylvestercrasto/sandbox/helmfiles-apps
+    repo = /Users/dannysylvestercrasto/sandbox/dubizzle
+    repo = /Users/dannysylvestercrasto/sandbox/helmfiles-apps
 [branch]
     sort = -committerdate
 [interactive]
@@ -69,9 +69,9 @@
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [diff]
     colorMoved = default
-	algorithm = histogram
-	tool = difftastic
+    algorithm = histogram
+    tool = difftastic
 [commit]
-	verbose = true
+    verbose = true
 [log]
-	date = iso
+    date = iso
