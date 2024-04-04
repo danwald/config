@@ -39,6 +39,8 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'rhysd/git-messenger.vim'
+Plug 'shellRaining/hlchunk.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end() " required
 
@@ -314,7 +316,7 @@ require('tabnine').setup({
 })
 
 require("chatgpt").setup()
-
+require("hlchunk").setup({})
 EOF
 
 " chatgpt
