@@ -16,7 +16,7 @@ alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker 
 alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qa)'
 
 alias ctags="/usr/local/bin/ctags"
-alias ls='exa --sort modified'
+alias ls='lsd'
 alias pip='python -mpip'
 
 alias dy="dig +noall +answer +additional $argv[1] @dns.toys"
