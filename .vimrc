@@ -315,8 +315,9 @@ require('tabnine').setup({
   exclude_filetypes = {"TelescopePrompt"},
   log_file_path = nil, -- absolute path to Tabnine log file
 })
-
-require("chatgpt").setup()
+require("chatgpt").setup({
+    openai_params = {model = "gpt-4-turbo"},
+})
 require("hlchunk").setup({})
 EOF
 
