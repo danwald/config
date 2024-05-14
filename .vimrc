@@ -41,6 +41,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'shellRaining/hlchunk.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'pechorin/any-jump.vim'
 
 call plug#end() " required
 
