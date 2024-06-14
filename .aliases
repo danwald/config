@@ -27,3 +27,4 @@ alias mkvenv='python -mvenv .venv --prompt .'
 alias venv='. ./.venv/bin/activate'
 
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+[ -f ~/.aliases_local ] && source ~/.aliases_local
