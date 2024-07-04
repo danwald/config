@@ -20,7 +20,7 @@ esac
 PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch lsd jo jq gimp hugin pandoc git-delta"
 
 PYPKGS="pynvim ipython ipdb setuptools wheel pipx"
-PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit"
+PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit httpx[cli]"
 
 $LOG="/tmp/dsetup.log"
 echo "Updating your packages and install pre-requisites (logging to $LOG)"
@@ -102,7 +102,7 @@ asdf reshim python $STABLE_PY3
 echo "installing python bins with pipx"
 for pkg in $PYPKG_BINS
 do
-pipx install $pkg
+pipx install "$pkg"
 done
 
 echo "no global pip installs allowed!"
