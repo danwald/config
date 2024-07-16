@@ -9,6 +9,8 @@ alias dim='docker images'
 #Kill all running containers.
 alias dkall='docker kill $(docker ps -q)'
 
+alias docker-compose='docker compose'
+
 #Delete all stopped containers.
 alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker ps -aq)'
 
