@@ -41,6 +41,14 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'shellRaining/hlchunk.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pechorin/any-jump.vim'
+Plug 'github/copilot.vim'
+
+Plug 'zbirenbaum/copilot.lua'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+Plug 'rust-lang/rust.vim'
+Plug 'preservim/tagbar'
+
 
 call plug#end() " required
 
@@ -257,7 +265,7 @@ lspconfig.cssls.setup {}
 lspconfig.docker_compose_language_service.setup {}
 lspconfig.dockerls.setup {}
 lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
@@ -304,19 +312,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
-require('tabnine').setup({
-  disable_auto_comment=true,
-  accept_keymap="<Tab>",
-  dismiss_keymap = "<C-]>",
-  debounce_ms = 800,
-  suggestion_color = {gui = "#808080", cterm = 244},
-  exclude_filetypes = {"TelescopePrompt"},
-  log_file_path = nil, -- absolute path to Tabnine log file
-})
+
 require("chatgpt").setup({
     openai_params = {model = "gpt-4-turbo"},
 })
 require("hlchunk").setup({})
+
+require("CopilotChat").setup {
+  debug = true, -- Enable debugging
+  -- See Configuration section for rest
+}
 EOF
 
 " chatgpt
