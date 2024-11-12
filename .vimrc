@@ -6,7 +6,6 @@ call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Shougo/deoplete.nvim'
-Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
 Plug 'dense-analysis/ale'
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fatih/vim-go'
