@@ -319,8 +319,8 @@ require("chatgpt").setup({
 require("hlchunk").setup({})
 
 require("CopilotChat").setup {
-  debug = true, -- Enable debugging
-  -- See Configuration section for rest
+--  debug = true, -- Enable debugging
+-- See Configuration section for rest
 }
 EOF
 
