@@ -5,9 +5,7 @@ set nocompatible              " be iMproved, required
 call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
-Plug 'Shougo/deoplete.nvim'
 Plug 'dense-analysis/ale'
-Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fatih/vim-go'
 Plug 'feline-nvim/feline.nvim'
 Plug 'gregsexton/gitv'
@@ -41,14 +39,21 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'shellRaining/hlchunk.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'pechorin/any-jump.vim'
-Plug 'github/copilot.vim'
 
 Plug 'zbirenbaum/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/tagbar'
 
+"pip3 install --user pynvim
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
 
 call plug#end() " required
 
@@ -243,14 +248,12 @@ nnoremap <leader>s :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
-
 " count searches under cursor
 map ,* *<C-O>:%s///gn<CR>
 autocmd FileType yaml setlocal ai et cuc sw=2 ts=2
 
-let g:python3_host_prog = "$HOME/.asdf/shims/python"
+let g:python3_host_prog = "/Users/danny/.asdf/shims/python"
+let g:python_host_prog = "/Users/danny/.asdf/shims/python"
 lua << EOF
 vim.g.editorconfig = false
 --vim.opt.termguicolors = true
@@ -317,11 +320,6 @@ require("chatgpt").setup({
     openai_params = {model = "gpt-4-turbo"},
 })
 require("hlchunk").setup({})
-
-require("CopilotChat").setup {
---  debug = true, -- Enable debugging
--- See Configuration section for rest
-}
 EOF
 
 " chatgpt
