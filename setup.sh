@@ -48,7 +48,7 @@ ln -sfv $DIR/pyproject.toml pyproject.toml
 cp -v $DIR/ssh_config ~/.ssh/config
 
 echo "Installing oh-my-zsh .. "
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh > /dev/null
 
 echo "Insatalling antigen .. "
 curl -Ls git.io/antigen > ~/antigen.zsh
