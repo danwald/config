@@ -24,8 +24,8 @@ PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit httpx[cl
 
 $LOG="/tmp/dsetup.log"
 echo "Updating your packages and install pre-requisites (logging to $LOG)"
-$PKGMGR update > $LOG
-$PKGMGR install $PKGS > $LOG
+$PKGMGR update >> $LOG
+$PKGMGR install `echo $PKGS` >> $LOG
 
 echo "Creating directories and links ... will overwrite"
 pushd $HOME > /dev/null
