@@ -24,7 +24,7 @@ antigen theme bira
 antigen apply
 
 
-for fp in ~/.fzf.zsh ~/.envs ~/.aliases ~/.zshrc_dbz ~/.zshrc_local
+for fp in ~/.fzf.zsh ~/.envs ~/.aliases ~/.zshrc_local ~/.zshrc_secret
 do
     [ -f $fp ] && source $fp #  && echo "loaded $fp"
 done
