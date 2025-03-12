@@ -1,6 +1,6 @@
 [user]
-    name = dcrasto
-    email = danny@dubizzle.com
+    name = danny crasto
+    email = danwald79@gmail.com
 [core]
     editor = nvim
     pager = delta
@@ -57,9 +57,6 @@
 [rebase]
     autoStash = true
     updateRefs = true
-[maintenance]
-    repo = /Users/dannysylvestercrasto/sandbox/dubizzle
-    repo = /Users/dannysylvestercrasto/sandbox/helmfiles-apps
 [branch]
     sort = -committerdate
 [interactive]
