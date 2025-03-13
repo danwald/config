@@ -17,7 +17,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch lsd jo jq gimp hugin pandoc git-delta"
+PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch lsd jo jq gimp hugin pandoc git-delta font-hack-nerd-font fontforge"
 
 PYPKGS="pynvim ipython ipdb setuptools wheel pipx"
 PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit httpx[cli]"
@@ -120,6 +120,6 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +qall
 popd > /dev/null
 
-
+echo "You need to install https://larsenwork.com/monoid/ font, patch retina via https://github.com/ryanoasis/nerd-fonts/blob/master/readme.md#font-patcher"
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 popd > /dev/null
