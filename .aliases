@@ -17,7 +17,6 @@ alias dcc='printf "\n>>> Deleting stopped containers\n\n" && docker rm $(docker 
 #Delete all untagged images.
 alias dci='printf "\n>>> Deleting untagged images\n\n" && docker rmi $(docker images -qa)'
 
-alias ls='lsd'
 alias pip='python -mpip'
 
 alias dy="dig +noall +answer +additional $argv[1] @dns.toys"
@@ -27,6 +26,12 @@ alias vim=nvim
 
 alias mkvenv='python -mvenv .venv --prompt .'
 alias venv='. ./.venv/bin/activate'
+
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
 [ -f ~/.aliases_local ] && source ~/.aliases_local
