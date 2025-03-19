@@ -10,6 +10,7 @@ Plug 'fatih/vim-go'
 Plug 'feline-nvim/feline.nvim'
 Plug 'gregsexton/gitv'
 Plug 'gryf/pylint-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'morhetz/gruvbox'
@@ -238,7 +239,7 @@ set foldlevel=99
 nnoremap <space> za
 
 "fzf
-set rtp+=$HOMEBREW_PREFIX/opt/fzf
+set rtp+=/usr/loca/bin/fzf
 nnoremap <leader>h :History<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Files<CR>
@@ -317,7 +318,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 require("chatgpt").setup({
-    openai_params = {model = "gpt-4-turbo"},
+    openai_params = {model = "gpt-4o-mini"},
 })
 require("hlchunk").setup({})
 EOF
