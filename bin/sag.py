@@ -17,8 +17,6 @@ SSH_ADD_CMD = 'ssh-add'
 # get passwords from the keychain if applicable
 SSH_FILES = (
     'id_rsa',
-    'id_rsa_dbz_prod',
-    'id_rsa_dbz_github',
 )
 
 def cmd_run(cmd):
