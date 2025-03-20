@@ -17,7 +17,7 @@ Linux) PKGMGR='sudo apt-get -y' ;;
 Darwin) PKGMGR='brew' ;;
 esac
 
-PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch lsd jo jq gimp hugin pandoc git-delta font-hack-nerd-font fontforge"
+PKGS="zsh curl git nvim cmake ctags ripgrep coreutils fzf zlib readline tmux keybase watch lsd jo jq gimp hugin pandoc git-delta font-hack-nerd-font fontforge asdf"
 
 PYPKGS="pynvim ipython ipdb setuptools wheel pipx"
 PYPKG_BINS="youtube-dl magic-wormhole awscli twine grip dunk pre-commit httpx[cli]"
@@ -73,11 +73,6 @@ mkdir -p ~/.ssh
 curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
 
 
-echo "Downloading asdf"
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0
-
-
-echo "install asdf python/node"
 read -p "Stable python version? " STABLE_PY3
 echo "installing $STABLE_PY3"
 echo "export STABLE_PY3=$STABLE_PY3" >> ~/.envs_local
