@@ -82,12 +82,12 @@ asdf plugin add python
 asdf plugin add golang
 
 asdf install golang latest
-asdf global golang latest
 asdf install nodejs latest
-asdf global nodejs latest
 asdf install python latest
 asdf install python $STABLE_PY3
-asdf global python $STABLE_PY3
+asdf set -u nodejs latest
+asdf set -u golang latest
+asdf set -u python $STABLE_PY3
 asdf list
 asdf current
 
