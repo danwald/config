@@ -68,10 +68,6 @@ echo "Ammending tmux.local with TmuxPluginManager|tmux-resurrect|tmux|tmux-conti
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
 cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 
-echo "Overwritting .ssh/authorized_keys from danwald.me"
-mkdir -p ~/.ssh
-curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
-
 echo "Getting kubectl aliases"
 curl -s -o ~/.kubectl_aliases https://raw.githubusercontent.com/ahmetb/kubectl-aliases/refs/heads/master/.kubectl_aliases
 
