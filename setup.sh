@@ -72,6 +72,8 @@ echo "Overwritting .ssh/authorized_keys from danwald.me"
 mkdir -p ~/.ssh
 curl -Os https://danwald.me/assets/authorized_keys ~/.ssh/authorized_keys
 
+echo "Getting kubectl aliases"
+curl -s -o ~/.kubectl_aliases https://raw.githubusercontent.com/ahmetb/kubectl-aliases/refs/heads/master/.kubectl_aliases
 
 read -p "Stable python version? " STABLE_PY3
 echo "installing $STABLE_PY3"
