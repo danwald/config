@@ -64,9 +64,8 @@ cp -v .tmux/.tmux.conf.local .
 popd > /dev/null
 
 echo "Downloading Tmux plugin Manager"
-echo "Ammending tmux.local with TmuxPluginManager|tmux-resurrect|tmux|tmux-continuum"
+echo "Manually update ~/.tmux.conf.local from .danwald.tmux.local"
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm > /dev/null
-cat $DIR/.danwald.tmux.local >> $HOME/.tmux.conf.local
 
 echo "Getting kubectl aliases"
 curl -s -o ~/.kubectl_aliases https://raw.githubusercontent.com/ahmetb/kubectl-aliases/refs/heads/master/.kubectl_aliases

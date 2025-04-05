@@ -1,32 +1,22 @@
-# from danwald@github/config.git/setup.sh
-
 #key-bindings
 bind-key a set-window-option synchronize-panes\; display-message "synchronize-panes is now #{?pane_synchronized,on,off}"
 
 # List of plugins
-set -g @tpm_plugins '          \
-  tmux-plugins/tpm             \
-  tmux-plugins/tmux-sensible   \
-  tmux-plugins/tmux-resurrect  \
-  tmux-plugins/tmux-continuum  \
-  thewtex/tmux-mem-cpu-load    \
-  danwald/kube-tmux            \
-'
+#set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'thewtex/tmux-mem-cpu-load'
+#set -g @plugin 'danwald/kube-tmux'
 
 #Plugin settings
 set -g @continuum-boot 'on'
 set -g @continuum-restore 'on'
 set -g @resurrect-strategy-vim 'session'
 
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in?format=2) #[fg=green,bg=black]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -g 5 -m 2 -q -i 2)#[default] #($TMUX_PLUGIN_MANAGER_PATH/kube-tmux/kube.tmux)#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , #{username}#{root}|#{hostname} '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #(curl wttr.in?format=2) #[fg=green,bg=black]#($TMUX_PLUGIN_MANAGER_PATH/tmux-mem-cpu-load/tmux-mem-cpu-load -g 0 -m 2 -q -a 0 -i 5)#[default] #($TMUX_PLUGIN_MANAGER_PATH/kube-tmux/kube.tmux)#{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} | #{username}'
 
-# Requrired work around for brew'ed tpm
-set-environment -g PATH "/usr/local/bin:/bin:/usr/bin"
 set-environment -g KUBE_TMUX_CTX_ENABLE "false"
 
 # new pane window in CWD
 bind '"' split-window -v -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'
