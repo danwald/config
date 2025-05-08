@@ -42,3 +42,5 @@ ulimit -n 524288 unlimited
 
 autoload -Uz compinit
 compinit
+
+source <(kubectl completion zsh)
