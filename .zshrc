@@ -8,6 +8,7 @@ antigen bundle git
 antigen bundle gitfast
 antigen bundle fzf
 antigen bundle asdf
+antigen bundle tmux
 
 # Syntax highlighting/suggestions/completions bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -26,7 +27,7 @@ antigen apply
 
 for fp in ~/.fzf.zsh ~/.envs ~/.aliases ~/.zshrc_local ~/.zshrc_secret
 do
-    [ -f $fp ] && source $fp #  && echo "loaded $fp"
+    [ -f $fp ] && echo "loading $fp" > /dev/null  && source $fp
 done
 
 fpath+=~/.zfunc
