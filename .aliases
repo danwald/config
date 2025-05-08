@@ -34,4 +34,3 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
-[ -f ~/.aliases_local ] && source ~/.aliases_local
