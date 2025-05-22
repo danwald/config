@@ -5,9 +5,11 @@ set nocompatible              " be iMproved, required
 call plug#begin()
 
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'MunifTanjim/nui.nvim'
 Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
 Plug 'feline-nvim/feline.nvim'
+Plug 'greggh/claude-code.nvim'
 Plug 'gregsexton/gitv'
 Plug 'gryf/pylint-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -17,10 +19,18 @@ Plug 'morhetz/gruvbox'
 Plug 'mtth/scratch.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvie/vim-flake8'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'pechorin/any-jump.vim'
+Plug 'preservim/tagbar'
 Plug 'raimon49/requirements.txt.vim'
+Plug 'rhysd/git-messenger.vim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'shellRaining/hlchunk.nvim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-fugitive'
@@ -32,21 +42,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'wakatime/vim-wakatime'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'rhysd/git-messenger.vim'
-Plug 'shellRaining/hlchunk.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'pechorin/any-jump.vim'
-
-Plug 'zbirenbaum/copilot.lua'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'rust-lang/rust.vim'
-Plug 'preservim/tagbar'
-
-Plug 'greggh/claude-code.nvim'
-
 
 "pip3 install --user pynvim
 if has('nvim')
