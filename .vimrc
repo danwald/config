@@ -32,7 +32,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'wakatime/vim-wakatime'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
-Plug 'jackMort/ChatGPT.nvim'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -45,6 +44,9 @@ Plug 'zbirenbaum/copilot.lua'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'preservim/tagbar'
+
+Plug 'greggh/claude-code.nvim'
+
 
 "pip3 install --user pynvim
 if has('nvim')
@@ -317,14 +319,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-require("chatgpt").setup({
-    openai_params = {model = "gpt-4o-mini"},
-})
 require("hlchunk").setup({})
+
+require('claude-code').setup()
 EOF
 
-" chatgpt
-nnoremap <Leader>C :ChatGPT<CR>
+" claudecode
+noremap <leader>cc :ClaudeCode<CR>
+
 
 set mouse=
 set statusline=%02n:%<%f%m\ %=[POS=%04l,%04v][%p%%][LEN=%L]%{FugitiveStatusline()}
