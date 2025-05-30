@@ -33,4 +33,5 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
+alias cg='curl -OL'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
