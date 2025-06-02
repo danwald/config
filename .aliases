@@ -27,7 +27,7 @@ alias vim=nvim
 alias mkvenv='python -mvenv .venv --prompt .'
 alias venv='. ./.venv/bin/activate'
 
-alias ls='lsd'
+alias ls='lsd --sort time --reverse'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
