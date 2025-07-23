@@ -257,6 +257,7 @@ vim.g.editorconfig = false
 --vim.opt.termguicolors = true
 --require('feline').setup()
 --require('feline').winbar.setup()
+vim.lsp.enable('ruff')
 
 require("mason").setup()
 -- Setup language servers.
@@ -265,7 +266,20 @@ lspconfig.bashls.setup {}
 lspconfig.cssls.setup {}
 lspconfig.docker_compose_language_service.setup {}
 lspconfig.dockerls.setup {}
-lspconfig.pyright.setup {}
+lspconfig.pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
 lspconfig.ts_ls.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
@@ -274,7 +288,6 @@ lspconfig.rust_analyzer.setup {
   },
 }
 lspconfig.yamlls.setup {}
-
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
