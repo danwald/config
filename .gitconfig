@@ -40,7 +40,7 @@
     enabled = true
     autoupdate = true
 [help]
-    autocorrect = -1
+    autocorrect = prompt
 [gui]
     spellingdictionary = none
 [credential]
@@ -48,6 +48,7 @@
 [push]
     default = simple
     autoSetupRemote = true
+    followTags = true
 [pull]
     rebase = true
 [oh-my-zsh]
@@ -57,6 +58,7 @@
 [rebase]
     autoStash = true
     updateRefs = true
+    autoSquash = true
 [branch]
     sort = -committerdate
 [interactive]
@@ -65,10 +67,19 @@
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 [diff]
-    colorMoved = default
-    #algorithm = histogram
-    #tool = difftastic
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [commit]
     verbose = true
 [log]
     date = iso
+[column]
+    ui = auto
+[tag]
+    sort = version:refname
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
