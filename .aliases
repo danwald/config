@@ -24,9 +24,6 @@ alias dy="dig +noall +answer +additional $argv[1] @dns.toys"
 alias vi=nvim
 alias vim=nvim
 
-alias mkvenv='python -mvenv .venv --prompt .'
-alias venv='. ./.venv/bin/activate'
-
 alias ls='lsd --sort time --reverse'
 alias l='ls -l'
 alias la='ls -a'
@@ -37,3 +34,13 @@ alias cg='curl -OL'
 alias dn8n='docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n'
 alias gdd='git diff | dunk'
 [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+
+mkvenv() {
+    local loc=${1:-".venv"}
+    python -mvenv $loc --prompt .
+}
+
+venv() {
+    local loc=${1:-".venv"}
+    . ./${loc}/bin/activate
+}
