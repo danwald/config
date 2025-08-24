@@ -206,7 +206,6 @@ noremap <Leader>w :%s/\s\+$//e
 
 " the_silver_searcher
 let g:ackprg = 'ag --nogroup --nocolor --column'
-
 " markdown preview
 let vim_markdown_preview_github=1
 let vim_markdown_preview_browser='Google Chrome'
@@ -412,6 +411,12 @@ sources = cmp.config.sources({
 matching = { disallow_symbol_nonprefix_matching = false }
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.py",
+  callback = function()
+    vim.lsp.buf.format({ timeout_ms = 2000 })
+  end,
+})
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
