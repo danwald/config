@@ -84,20 +84,26 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("snacks").util.lsp.on(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
     },
     ---@class PluginLspOpts
     opts = {
       ---@type lspconfig.options
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
-        tsserver = {},
+        tsserver = {
+          keys = {
+            {
+              "<leader>co",
+              "<cmd>TypescriptOrganizeImports<CR>",
+              desc = "Organize Imports",
+            },
+            {
+              "<leader>cR",
+              "<cmd>TypescriptRenameFile<CR>",
+              desc = "Rename File",
+            },
+          },
+        },
       },
       -- you can do any additional lsp server setup here
       -- return true if you don't want this server to be setup with lspconfig
@@ -116,7 +122,8 @@ return {
 
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
+  -- { import = "lazyvim.plugins.extras.lang.typescript" },
+  -- NOTE: This import has been moved to lua/config/lazy.lua
 
   -- add more treesitter parsers
   {
@@ -180,10 +187,12 @@ return {
   },
 
   -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-starter" },
+  -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
+  -- NOTE: This import has been moved to lua/config/lazy.lua
 
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
+  -- { import = "lazyvim.plugins.extras.lang.json" },
+  -- NOTE: This import has been moved to lua/config/lazy.lua
 
   -- add any tools you want to have installed below
   {
