@@ -206,4 +206,12 @@ return {
       },
     },
   },
+  { "tpope/vim-fugitive", lazy = false },
+  { 'wakatime/vim-wakatime', lazy = false },
+  { "mtth/scratch.vim",
+    lazy = false,
+    init = function()
+      vim.g.scratch_persistence_file = "~/.scratch.vim"
+    end,
+  },
 }
