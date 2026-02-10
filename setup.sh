@@ -112,6 +112,14 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +qall
 popd >/dev/null
 
+echo "installing docker/kubectl completions"
+pushd $HOME >/dev/null
+mkdir -p ~/.docker/completions
+mkdir -p ~/.kube/completions
+docker completion zsh >~/.docker/completions/_docker
+kubectl completions zsh >~/.kube/completions/_kubectl
+popd >/dev/null
+
 echo "You need to install https://larsenwork.com/monoid/ font, patch retina via https://github.com/ryanoasis/nerd-fonts/blob/master/readme.md#font-patcher"
 echo "All good in the hood. Re-login and don't overwrite the zsh config when prompted"
 popd >/dev/null

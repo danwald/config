@@ -42,7 +42,6 @@ ulimit -n 524288 unlimited
 
 autoload -Uz compinit
 compinit
-
-source <(kubectl completion zsh)
+FPATH="$HOME/.docker/completions:$HOME/.kube/completions:$FPATH"
 
 eval "$(starship init zsh)"
