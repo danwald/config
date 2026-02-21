@@ -44,6 +44,7 @@ ln -sfv $DIR/bin/sag.py ~/bin/sag
 ln -sfv $DIR/bin/time_ms ~/bin/time_ms
 ln -sfv $DIR/pyproject.toml pyproject.toml
 cp -v $DIR/ssh_config ~/.ssh/config
+ln -sfv $DIR/claude ~/.config/claude
 
 echo "Installing oh-my-zsh .. "
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh >/dev/null
