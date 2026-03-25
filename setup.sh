@@ -33,6 +33,7 @@ ln -sfv $DIR/init.vim ~/.config/nvim/init.vim
 ln -sfv $DIR/.gitconfig .gitconfig
 ln -sfv $DIR/.gitignore .gitignore
 ln -sfv $DIR/.zshrc .zshrc
+ln -sfv $DIR/.zsh_plugins.txt .zsh_plugins.txt
 ln -sfv $DIR/.aliases .aliases
 ln -sfv $DIR/.envs .envs
 ln -sfv $DIR/.ackrc .ackrc
@@ -49,8 +50,8 @@ ln -sfv $DIR/claude ~/.config/claude
 echo "Installing oh-my-zsh .. "
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh >/dev/null
 
-echo "Insatalling antigen .. "
-curl -Ls git.io/antigen >~/antigen.zsh
+echo "Installing antidote .. "
+git clone --depth=1 https://github.com/mattmc3/antidote.git ~/.antidote
 
 echo "Changing your shell to zsh .."
 chsh -s $(which zsh) $USER
