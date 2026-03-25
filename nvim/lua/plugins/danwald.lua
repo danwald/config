@@ -203,6 +203,7 @@ return {
         "shellcheck",
         "shfmt",
         "flake8",
+        "ruff", -- Adds ruff for Python formatting and linting
       },
     },
   },
@@ -214,4 +215,5 @@ return {
       vim.g.scratch_persistence_file = "~/.scratch.vim"
     end,
   },
+  { 'preservim/tagbar', lazy = true },
 }
