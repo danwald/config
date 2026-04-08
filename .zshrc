@@ -3,6 +3,8 @@ FPATH="$HOME/.docker/completions:$HOME/.kube/completions:$FPATH"
 autoload -Uz compinit
 compinit
 
+export ZSH_CACHE_DIR="$HOME/.zsh_cache"
+
 source ~/.antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
 
