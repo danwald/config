@@ -34,7 +34,7 @@
 [merge]
     autoStash = true
     ff = no
-	conflictStyle = zdiff3
+	  #conflictStyle = zdiff3
     tool = nvimdiff
 [rerere]
     enabled = true
@@ -69,7 +69,7 @@
 [diff]
     algorithm = histogram
     colorMoved = plain
-    mnemonicPrefix = true
+    mnemonicPrefix = false
     renames = true
 [commit]
     verbose = true
