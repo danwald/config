@@ -44,7 +44,7 @@
 [gui]
     spellingdictionary = none
 [credential]
-    helper = cache --timeout=3600
+	  helper = /usr/local/share/gcm-core/git-credential-manager
 [push]
     default = simple
     autoSetupRemote = true
@@ -83,3 +83,5 @@
     prune = true
     pruneTags = true
     all = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
