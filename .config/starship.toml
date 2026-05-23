@@ -1,0 +1,17 @@
+scan_timeout = 30
+command_timeout = 500
+
+[git_status]
+ahead = "⇡${count}"
+behind = "⇣${count}"
+untracked = ""
+
+[git_metrics]
+disabled = true
+
+# AIDEV-NOTE: asdf shims are too slow for starship's command_timeout; venv name in prompt is sufficient
+[python]
+disabled = true
+
+[time]
+disabled = true

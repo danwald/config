@@ -216,4 +216,19 @@ return {
     end,
   },
   { 'preservim/tagbar', lazy = true },
+
+  -- AIDEV-NOTE: run ruff check --fix then ruff format on every Python save (in that order)
+  {
+    "stevearc/conform.nvim",
+    event = "BufWritePre",
+    opts = {
+      formatters_by_ft = {
+        python = { "ruff_fix", "ruff_format" },
+      },
+      format_on_save = {
+        timeout_ms = 2000,
+        lsp_fallback = false,
+      },
+    },
+  },
 }

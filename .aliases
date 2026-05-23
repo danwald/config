@@ -32,9 +32,8 @@ alias lt='ls --tree'
 
 alias cg='curl -OL'
 alias dn8n='docker run -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n'
-alias gdd='git diff | dunk'
-alias j='just'
-[ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+alias gdd='git diff | dunk | less'
+alias j=just
 
 mkvenv() {
     local loc=${1:-".venv"}
@@ -44,4 +43,11 @@ mkvenv() {
 venv() {
     local loc=${1:-".venv"}
     . ./${loc}/bin/activate
+}
+
+# AIDEV-NOTE: lazy-load 780-line kubectl_aliases on first kubectl call to avoid startup cost
+kubectl() {
+  unfunction kubectl
+  [ -f ~/.kubectl_aliases ] && source ~/.kubectl_aliases
+  kubectl "$@"
 }

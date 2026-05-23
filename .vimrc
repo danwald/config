@@ -411,12 +411,6 @@ sources = cmp.config.sources({
 matching = { disallow_symbol_nonprefix_matching = false }
 })
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.py",
-  callback = function()
-    vim.lsp.buf.format({ timeout_ms = 2000 })
-  end,
-})
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
