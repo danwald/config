@@ -4,3 +4,5 @@
 --
 vim.opt.wrap = true
 vim.opt.textwidth = 120
+
+vim.g.root_spec = { "cwd" }
