@@ -43,8 +43,6 @@
     autocorrect = prompt
 [gui]
     spellingdictionary = none
-[credential]
-	  helper = /usr/local/share/gcm-core/git-credential-manager
 [push]
     default = simple
     autoSetupRemote = true
@@ -85,3 +83,5 @@
     all = true
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
