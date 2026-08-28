@@ -10,3 +10,4 @@ __pycache__
 node_modules*
 tags
 .serena
+settings.local.json
