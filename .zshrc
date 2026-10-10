@@ -36,5 +36,7 @@ source "$_starship_cache"
 unset _starship_cache
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 # End of Docker CLI completions
